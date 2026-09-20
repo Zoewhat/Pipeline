@@ -1,0 +1,25 @@
+/* Original vector/CSS treatment guided by the user's physical boards and tiles. */
+:root{--ink:#26353b;--muted:#586461;--paper:#eee6d5;--white:#fbf3e2;--line:#c7c1ad;--teal:#34757b;--orange:#c6773c;--soft:#e0e4d2;--board:#233138;--olive:#546449}
+body{background:var(--paper)}
+.masthead{background:var(--board);color:var(--white);border-bottom:5px solid var(--olive)}
+.brand{font-weight:500;letter-spacing:.25em}.masthead .connection{color:#c3cdc6}
+.lobby{gap:6%;grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.intro{background:var(--board);color:var(--white);padding:36px;position:relative;border-top:6px solid var(--orange)}
+.intro .eyebrow{color:#c0ccbd}.intro h1{font-family:Arial,Helvetica,sans-serif;font-weight:300;text-transform:uppercase;font-size:clamp(52px,5.7vw,82px);letter-spacing:-.045em;line-height:1.04}
+.intro .lead{color:#dfdfcf}.intro .credit{color:#b9c5bf}
+.pipe-art{height:auto;max-width:none;margin-top:26px;overflow:visible}.pipe-art img{display:block;width:100%;height:auto}
+.lobby-panel{box-shadow:6px 6px 0 #c6c2ad;border-color:#bdb59e}.status-note .label{color:#8a4825}
+.primary{background:var(--olive);border-color:var(--olive)}.primary:hover:not(:disabled){background:#3f5036}
+.table-heading h1,.checklist h1{font-family:Arial,Helvetica,sans-serif;font-weight:400;letter-spacing:-.045em}
+.round-strip{background:var(--board);color:var(--white);padding:16px 20px;border:0;border-left:5px solid var(--orange)}
+.round-strip small{color:#c2cdc8}.round-strip .current{background:var(--olive)}
+.players{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.player{min-width:0;border:1px solid #b5b39e;border-top:5px solid var(--teal);box-shadow:0 3px 0 #d4cbb7}
+.player-top{background:var(--board);color:var(--white);margin:-24px -24px 18px;padding:20px 24px;border-bottom:4px solid var(--olive)}
+.player-tag,.cash small{color:#c4cec8}.cash{font-family:Arial,Helvetica,sans-serif;font-weight:300;font-variant-numeric:tabular-nums}
+.tank-row{border-color:#d9d3bf}.tank{border:1px solid #737e78;border-radius:4px;background:linear-gradient(90deg,#9aaba1,#e7edcf 40%,#94a89e);color:#364b44;box-shadow:inset 0 3px #d5dec2,inset 0 -3px #70847a}
+.development{background:#e0e4d2;border-left:4px solid var(--olive)}.empty-seat{box-shadow:none}
+footer{border-top:2px solid var(--olive)}
+.tank-icons{min-width:0;flex-wrap:wrap}.tank-controls{flex-shrink:0}.cash{flex-shrink:0}
+.setup-intro .preset-note{margin-top:14px;padding:14px 18px;border-left:3px solid var(--olive);background:var(--soft);font-size:14px;max-width:900px}
+@media(max-width:950px){.intro{padding:27px}.player-top{margin:-18px -18px 18px;padding:18px}.player-actions{flex-wrap:wrap}.player-actions button{white-space:normal}}
+@media(max-width:700px){.lobby,.players{grid-template-columns:minmax(0,1fr)}.intro{padding:25px}.intro h1{font-size:54px}.intro .pipe-art{display:block;max-width:280px;margin-top:16px}.round-strip{padding:14px 10px}.lobby-panel{box-shadow:4px 4px 0 #c6c2ad}}

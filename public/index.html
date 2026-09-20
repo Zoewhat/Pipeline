@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d3a">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Pipeline · A table for two</title>
+  <link rel="icon" href="/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/board-theme.css">
+  <link rel="stylesheet" href="/table.css">
+  <link rel="stylesheet" href="/workspace.css">
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="/geometry.js" defer></script>
+  <script src="/sounds.js" defer></script>
+  <script src="/workspace.js" defer></script>
+  <script src="/table.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><span class="connection" id="connection" role="status">Connecting…</span></header>
+  <main>
+    <section id="lobby" class="lobby">
+      <div class="intro"><p class="eyebrow">THE BASE GAME / TWO PLAYERS</p><h1>A table<br>for two.</h1><p class="lead">Your refinery. Their refinery.<br>One shared table, wherever you are.</p><div class="pipe-art" aria-hidden="true"><img src="/refinery.svg" alt="" width="420" height="136"></div><p class="credit">A personal adaptation of Pipeline<br>Game design by Ryan Courtney · Capstone Games</p></div>
+      <div class="lobby-panel">
+        <div class="status-note"><span class="label">TWO-PLAYER BASE GAME</span><p>Build your refinery, trade oil, and play all three years together.</p></div>
+        <nav class="mode-switch" aria-label="Table mode"><button type="button" class="selected" data-mode="create">Create a table</button><button type="button" data-mode="join">Join a table</button><button type="button" data-mode="local">Same device</button></nav>
+        <form id="room-form">
+          <label for="name">Your name</label><input id="name" autocomplete="nickname" maxlength="24" required placeholder="How should we call you?">
+          <div id="code-field" hidden><label for="code">Table code</label><input id="code" maxlength="8" autocapitalize="characters" spellcheck="false" placeholder="8-character code"></div>
+          <div id="partner-field" hidden><label for="partner">Partner’s name</label><input id="partner" maxlength="24" placeholder="Player two"></div>
+          <button id="submit-room" class="primary wide" type="submit" disabled>Create a private table <span>↗</span></button>
+        </form>
+        <details class="restore"><summary>Restore from a recovery file</summary><label for="restore-file">Private seat recovery file</label><input type="file" id="restore-file" accept=".json,application/json"></details>
+        <p class="helper" id="mode-help">Create a table, then share its invite link with your partner.</p>
+        <div id="saved" hidden><hr><label for="saved-select">Your saved tables</label><div class="saved-row"><select id="saved-select"></select><button id="resume" class="secondary">Rejoin</button></div></div>
+      </div>
+    </section>
+    <section id="table" hidden>
+      <div class="table-heading"><div><p class="eyebrow">YOUR SHARED TABLE</p><h1 id="table-title">Prepare your refinery.</h1></div><div class="invite"><span>TABLE <b id="table-code"></b></span><button class="secondary" id="copy">Copy invite</button><button class="secondary" id="download-save" hidden>Save recovery file</button><button class="text-button" id="leave">Back to lobby</button></div></div>
+      <div class="round-strip"><span class="current">SETUP</span><span>YEAR 01 <small>8 rounds</small></span><span>YEAR 02 <small>6 rounds</small></span><span>YEAR 03 <small>4 rounds</small></span></div>
+      <div id="waiting" class="waiting" hidden>One seat is open. Send the invite link to your partner to bring them to the table.</div>
+      <div class="setup-intro"><h2>Five tanks. Four grades.</h2><p>Choose the grades your tanks will hold. Each tank stores two barrels; both players start with $40.</p></div>
+      <div id="players" class="players"></div>
+      <button id="start-game" class="primary" hidden>Start the game</button>
+      <div id="game-board" hidden></div>
+      <div class="table-bottom"><details class="activity" open><summary>Table activity</summary><ol id="log"></ol></details></div>
+      <p class="storage-note">Every confirmed move is saved on the server and backed up in this browser. Download a private recovery file to keep a copy or move your seat to another device. Free hosting recovery requires the same server backup key.</p>
+    </section>
+  </main>
+  <div id="notice" role="status" aria-live="polite" hidden></div>
+  <footer><a href="/components.html">Rules &amp; components</a><span>Two-player base game</span></footer>
+</body>
+</html>

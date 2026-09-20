@@ -1,0 +1,8739 @@
+{
+  "edition": "User physical base game; print revision unidentified",
+  "verified": false,
+  "pipeTiles": [
+    {
+      "id": "pipe-358-1-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-1-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 1,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-1-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 1,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-1-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 1,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-2-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 2,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-2-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 2,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-2-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 2,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-2-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 2,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-3-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 3,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-3-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 3,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-3-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 3,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-3-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 3,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-4-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 4,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-4-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 4,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-4-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 4,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-4-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 4,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-5-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 5,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-5-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 5,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-5-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 5,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-5-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 5,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-6-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 6,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-6-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 6,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-6-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 6,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-6-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 6,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-7-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 7,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-7-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 7,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-7-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 7,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-7-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 7,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-8-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 8,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-8-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 8,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-8-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 8,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-8-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 8,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-9-1",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 9,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-9-2",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 9,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-9-3",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 9,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-358-9-4",
+      "source": "IMG_0358",
+      "sourcePosition": {
+        "row": 9,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-1-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-1-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 1,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-1-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 1,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-1-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 1,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-1-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 1,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-2-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 2,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-2-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 2,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-2-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 2,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-2-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 2,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-2-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 2,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-3-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 3,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-3-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 3,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-3-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 3,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-3-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 3,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-3-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 3,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-4-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 4,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-4-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 4,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-4-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 4,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-4-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 4,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-4-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 4,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-5-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 5,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-5-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 5,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-5-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 5,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-5-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 5,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-5-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 5,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-6-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 6,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-6-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 6,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-6-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 6,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-6-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 6,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-6-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 6,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-7-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 7,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-7-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 7,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-7-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 7,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-7-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 7,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-7-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 7,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-8-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 8,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-8-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 8,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-8-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 8,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-8-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 8,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-8-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 8,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-9-1",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 9,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-9-2",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 9,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-9-3",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 9,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-9-4",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 9,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-359-9-5",
+      "source": "IMG_0359",
+      "sourcePosition": {
+        "row": 9,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-1-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 1,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-2-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 2,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-3-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 3,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-4-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 4,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-5-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 5,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-6-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 6,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-7-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 7,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-8-6",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 8,
+        "column": 6
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-9-1",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 9,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-9-2",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 9,
+        "column": 2
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-9-3",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 9,
+        "column": 3
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "E",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-9-4",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 9,
+        "column": 4
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "W",
+              "E"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "silver"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "teal"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-360-9-5",
+      "source": "IMG_0360",
+      "sourcePosition": {
+        "row": 9,
+        "column": 5
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "S",
+              "E"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "W"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "S",
+              "W"
+            ],
+            "color": "silver"
+          },
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    },
+    {
+      "id": "pipe-362-1-1",
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "halves": [
+        [
+          {
+            "ports": [
+              "N",
+              "E"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "W",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ],
+        [
+          {
+            "ports": [
+              "E",
+              "W"
+            ],
+            "color": "orange"
+          },
+          {
+            "ports": [
+              "N",
+              "S"
+            ],
+            "color": "teal"
+          }
+        ]
+      ],
+      "geometryReviewed": true
+    }
+  ],
+  "contracts": [
+    {
+      "id": "contract-r1-c01",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c02",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c03",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c04",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c05",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c06",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c07",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c08",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c09",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 9
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r1-c10",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 1,
+        "column": 10
+      },
+      "requirementsVerified": true,
+      "setupGroup": 1,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c01",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c02",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c03",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c04",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c05",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c06",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c07",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c08",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c09",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 9
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r2-c10",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 2,
+        "column": 10
+      },
+      "requirementsVerified": true,
+      "setupGroup": 2,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c01",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c02",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c03",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c04",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c05",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c06",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c07",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c08",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c09",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 9
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    },
+    {
+      "id": "contract-r3-c10",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0362",
+      "sourcePosition": {
+        "row": 3,
+        "column": 10
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "groupNote": "User follow-up confirms grouping by visible symbols.",
+      "verified": true,
+      "groupSource": "USER_INTRO_SCOPE"
+    }
+  ],
+  "orders": [
+    {
+      "id": "order-r1-c01",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c02",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c03",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c04",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c05",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c06",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c07",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r1-c08",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 1,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 3,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c01",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c02",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c03",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c04",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c05",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c06",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c07",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r2-c08",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 2,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 4,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c01",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 1
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c02",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 2
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c03",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 3
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c04",
+      "requirements": [
+        {
+          "color": "silver",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "teal",
+          "grade": 3
+        },
+        {
+          "color": "silver",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 4
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c05",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 5
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c06",
+      "requirements": [
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 3
+        },
+        {
+          "color": "orange",
+          "grade": 2
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 6
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c07",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "teal",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        },
+        {
+          "color": "orange",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 7
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    },
+    {
+      "id": "order-r3-c08",
+      "requirements": [
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "teal",
+          "grade": 2
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        },
+        {
+          "color": "silver",
+          "grade": 1
+        }
+      ],
+      "source": "IMG_0361",
+      "sourcePosition": {
+        "row": 3,
+        "column": 8
+      },
+      "requirementsVerified": true,
+      "setupGroup": 5,
+      "setupGroupVerified": true,
+      "verified": true
+    }
+  ],
+  "markets": [
+    {
+      "id": "crude",
+      "rows": [
+        {
+          "color": "orange",
+          "grade": 0,
+          "printedSlotPrices": [
+            5,
+            5,
+            7,
+            7,
+            9,
+            9,
+            11,
+            11
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 0,
+          "printedSlotPrices": [
+            6,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 0,
+          "printedSlotPrices": [
+            7,
+            7,
+            9,
+            9,
+            11,
+            11,
+            13,
+            13
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        }
+      ],
+      "source": "IMG_0347",
+      "printedPricesVerified": true,
+      "verified": true,
+      "note": "Two-player slots are zero-based indices into printedSlotPrices. Two-dot overlay faces block the cheaper pair of refined slots. Crude slots marked for 3+ or 4 players are excluded."
+    },
+    {
+      "id": "market-1",
+      "rows": [
+        {
+          "color": "teal",
+          "grade": 0,
+          "printedSlotPrices": [
+            5,
+            5,
+            7,
+            7,
+            9,
+            9,
+            11,
+            11
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 1,
+          "printedSlotPrices": [
+            20,
+            20,
+            25,
+            25
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 2,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 2,
+          "printedSlotPrices": [
+            40,
+            40,
+            45,
+            45
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 3,
+          "printedSlotPrices": [
+            45,
+            45,
+            50,
+            50
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 1,
+          "printedSlotPrices": [
+            25,
+            25,
+            30,
+            30
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 2,
+          "printedSlotPrices": [
+            35,
+            35,
+            40,
+            40
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 2,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 3,
+          "printedSlotPrices": [
+            50,
+            50,
+            55,
+            55
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 0,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        }
+      ],
+      "source": "IMG_0347",
+      "printedPricesVerified": true,
+      "verified": true,
+      "note": "Two-player slots are zero-based indices into printedSlotPrices. Two-dot overlay faces block the cheaper pair of refined slots. Crude slots marked for 3+ or 4 players are excluded."
+    },
+    {
+      "id": "market-2",
+      "rows": [
+        {
+          "color": "silver",
+          "grade": 0,
+          "printedSlotPrices": [
+            6,
+            6,
+            8,
+            8,
+            10,
+            10,
+            12,
+            12
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 1,
+          "printedSlotPrices": [
+            25,
+            25,
+            30,
+            30
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 2,
+          "printedSlotPrices": [
+            35,
+            35,
+            40,
+            40
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 2,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "orange",
+          "grade": 3,
+          "printedSlotPrices": [
+            50,
+            50,
+            55,
+            55
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 1,
+          "printedSlotPrices": [
+            20,
+            20,
+            25,
+            25
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 3,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 2,
+          "printedSlotPrices": [
+            40,
+            40,
+            45,
+            45
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 3,
+          "printedSlotPrices": [
+            45,
+            45,
+            50,
+            50
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        }
+      ],
+      "source": "IMG_0347",
+      "printedPricesVerified": true,
+      "verified": true,
+      "note": "Two-player slots are zero-based indices into printedSlotPrices. Two-dot overlay faces block the cheaper pair of refined slots. Crude slots marked for 3+ or 4 players are excluded."
+    },
+    {
+      "id": "market-3",
+      "rows": [
+        {
+          "color": "orange",
+          "grade": 0,
+          "printedSlotPrices": [
+            7,
+            7,
+            9,
+            9,
+            11,
+            11,
+            13,
+            13
+          ],
+          "twoPlayerSlots": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "refresh": {
+            "operation": "add",
+            "maximum": 4,
+            "direction": "right-to-left",
+            "source": [
+              "USER_INTRO_SCOPE",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 1,
+          "printedSlotPrices": [
+            20,
+            20,
+            25,
+            25
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 3,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 2,
+          "printedSlotPrices": [
+            40,
+            40,
+            45,
+            45
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 2,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "silver",
+          "grade": 3,
+          "printedSlotPrices": [
+            45,
+            45,
+            50,
+            50
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 1,
+          "printedSlotPrices": [
+            25,
+            25,
+            30,
+            30
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 2,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 2,
+          "printedSlotPrices": [
+            35,
+            35,
+            40,
+            40
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 1,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        },
+        {
+          "color": "teal",
+          "grade": 3,
+          "printedSlotPrices": [
+            50,
+            50,
+            55,
+            55
+          ],
+          "twoPlayerSlots": [
+            2,
+            3
+          ],
+          "refresh": {
+            "operation": "remove",
+            "maximum": 0,
+            "direction": "right-to-left",
+            "source": [
+              "IMG_0366",
+              "IMG_0352:p6"
+            ],
+            "verified": true
+          },
+          "twoPlayerSlotsSource": [
+            "IMG_0347",
+            "IMG_0366"
+          ]
+        }
+      ],
+      "source": "IMG_0347",
+      "printedPricesVerified": true,
+      "verified": true,
+      "note": "Two-player slots are zero-based indices into printedSlotPrices. Two-dot overlay faces block the cheaper pair of refined slots. Crude slots marked for 3+ or 4 players are excluded."
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "government",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Receive 2 government pipes immediately from an open quadrant; receive 1 at each new year. The printed opening clause needs reconciliation with the annual quadrant limit.",
+          "copies": 3,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Receive 4 government pipes immediately from an open quadrant.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Receive 6 government pipes immediately from an open quadrant.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0363",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "shops",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Receive 2 tanks and 1 pipe from either shop immediately, if available; receive 2 tanks from the tank shop each new year.",
+          "copies": 3,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Receive 1 machine and 2 shop pipes immediately, if available.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Receive 1 machine and 4 shop pipes immediately, if available.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0363",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "human-resources",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Secondary actions do not cost $10.",
+          "copies": 3,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Secondary action may be up to 2 spaces away; action tiles and center square count as spaces.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Take two worker actions with no secondary action; the second worker action is available immediately.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0364",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "engineering",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Add 1 virtual refinement value for each 4 pipe segments.",
+          "copies": 3,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Add 2 virtual refinement values for each 4 pipe segments; discard the level 1 card.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Pipelines, including machine pipelines, can run 2 barrels of the same starting grade, including crude.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "cardEffectSummary": "Each pipeline may refine two barrels at a time.",
+          "wordingDifference": "The physical card omits the appendix restriction; implemented using the publisher correction. See docs/RULE_DECISIONS.md.",
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": false,
+      "cardSource": "IMG_0364",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "refined-markets",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Refined oil prices increase by $5 when buying or selling in refined markets.",
+          "copies": 3,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "A refined-market action may trade in all refined markets.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "When selling to refined markets, oil color need not match; grade must still match or be higher.",
+          "copies": 1,
+          "implemented": true,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0364",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "contracts-orders",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "A contract may be fulfilled twice per year; starting its second fulfillment commits it to completion that year.",
+          "copies": 3,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Earn $10 extra for each barrel sold to contracts or orders.",
+          "copies": 1,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Take orders as contracts via the contracts and loans action; use contract fulfillment and payment rules.",
+          "copies": 1,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0363",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    },
+    {
+      "id": "machines",
+      "source": "IMG_0354:p11",
+      "levels": [
+        {
+          "level": 1,
+          "effectSummary": "Immediately receive 1 machine; a worker main action can run a machine for free.",
+          "copies": 3,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 2,
+          "effectSummary": "Machine-phase activation costs $5 total.",
+          "copies": 1,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        },
+        {
+          "level": 3,
+          "effectSummary": "Machines can run before work actions and during the machine phase, once per phase.",
+          "copies": 1,
+          "implemented": false,
+          "faceObserved": true,
+          "copiesSource": "USER_INTRO_SCOPE",
+          "copiesVerified": true
+        }
+      ],
+      "textReviewed": true,
+      "verified": true,
+      "cardSource": "IMG_0363",
+      "cardTextReviewed": true,
+      "copyCountsVerified": true
+    }
+  ],
+  "valuations": [
+    {
+      "number": 1,
+      "id": "refined-oil",
+      "effectSummary": "Repeat the end-game value of refined oil remaining in tanks.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": true,
+      "note": "Implemented in the introductory final score.",
+      "enabledInCurrentScope": true
+    },
+    {
+      "number": 2,
+      "id": "pipelines",
+      "effectSummary": "Repeat the end-game value of pipelines.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": true,
+      "note": "Implemented in the introductory final score.",
+      "enabledInCurrentScope": true
+    },
+    {
+      "number": 3,
+      "id": "tanks",
+      "effectSummary": "Earn $10 per tank.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": true,
+      "note": "Implemented in the introductory final score.",
+      "enabledInCurrentScope": true
+    },
+    {
+      "number": 4,
+      "id": "level-three-upgrades",
+      "effectSummary": "Earn $100 per level-three upgrade.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 5,
+      "id": "machine-pipelines",
+      "effectSummary": "Repeat the end-game value of pipelines attached to machines.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 6,
+      "id": "silver",
+      "effectSummary": "Repeat silver oil and silver pipeline end-game values.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 7,
+      "id": "orange",
+      "effectSummary": "Repeat orange oil and orange pipeline end-game values.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 8,
+      "id": "teal",
+      "effectSummary": "Repeat teal oil and teal pipeline end-game values.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 9,
+      "id": "low-pipelines",
+      "effectSummary": "Earn $10 per pipeline refining crude to low grade.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 10,
+      "id": "mid-pipelines",
+      "effectSummary": "Earn $20 per pipeline refining crude to mid grade.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 11,
+      "id": "high-pipelines",
+      "effectSummary": "Earn $30 per pipeline refining crude to high grade.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 12,
+      "id": "contracts",
+      "effectSummary": "Earn the value of remaining contracts as if fulfilled again.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 13,
+      "id": "orders",
+      "effectSummary": "Earn the value of completed orders as if fulfilled again.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": true,
+      "implemented": false,
+      "note": "Effect read; gameplay implementation remains pending.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 14,
+      "id": "pipeline-types",
+      "effectSummary": "Score distinct combinations of pipeline color and refinement grade; duplicates ignored.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": false,
+      "implemented": false,
+      "note": "Small numerical payout table is unreadable.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 15,
+      "id": "machine-pipeline-types",
+      "effectSummary": "Score distinct machine-connected pipeline color and refinement-grade combinations; duplicates ignored.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": false,
+      "implemented": false,
+      "note": "Small numerical payout table is unreadable.",
+      "enabledInCurrentScope": false
+    },
+    {
+      "number": 16,
+      "id": "fulfilled-oil-types",
+      "effectSummary": "Score distinct color/grade combinations in fulfilled contracts and orders.",
+      "source": "IMG_0355:p12",
+      "textReviewed": true,
+      "payoutTable": null,
+      "verified": false,
+      "implemented": false,
+      "note": "Small numerical payout table is unreadable.",
+      "enabledInCurrentScope": false
+    }
+  ],
+  "refinementMarkers": [
+    {
+      "id": "refinement-4-1",
+      "value": 4,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-4-2",
+      "value": 4,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-4-3",
+      "value": 4,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-5-1",
+      "value": 5,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-5-2",
+      "value": 5,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-5-3",
+      "value": 5,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-6-1",
+      "value": 6,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-6-2",
+      "value": 6,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-6-3",
+      "value": 6,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-7-1",
+      "value": 7,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-7-2",
+      "value": 7,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    },
+    {
+      "id": "refinement-7-3",
+      "value": 7,
+      "source": "USER_INTRO_SCOPE",
+      "verified": true
+    }
+  ],
+  "actionTiles": [
+    {
+      "id": "upgrades",
+      "source": "IMG_0363",
+      "sourcePosition": {
+        "row": "bottom",
+        "column": 1
+      },
+      "faceLabelVerified": true,
+      "turnOrderIconPresent": true,
+      "reverseEquivalentSource": "IMG_0357:p5",
+      "implemented": false
+    },
+    {
+      "id": "machines-pipes",
+      "source": "IMG_0363",
+      "sourcePosition": {
+        "row": "bottom",
+        "column": 2
+      },
+      "faceLabelVerified": true,
+      "turnOrderIconPresent": true,
+      "reverseEquivalentSource": "IMG_0357:p5",
+      "implemented": false
+    },
+    {
+      "id": "tanks-pipes",
+      "source": "IMG_0363",
+      "sourcePosition": {
+        "row": "bottom",
+        "column": 3
+      },
+      "faceLabelVerified": true,
+      "turnOrderIconPresent": true,
+      "reverseEquivalentSource": "IMG_0357:p5",
+      "implemented": false
+    },
+    {
+      "id": "contracts-loans",
+      "source": "IMG_0363",
+      "sourcePosition": {
+        "row": "bottom",
+        "column": 4
+      },
+      "faceLabelVerified": true,
+      "turnOrderIconPresent": true,
+      "reverseEquivalentSource": "IMG_0357:p5",
+      "implemented": false
+    }
+  ],
+  "shopSlots": [
+    {
+      "type": "tank",
+      "priceRows": [
+        5,
+        10,
+        15
+      ],
+      "printedSlotsPerRow": 4,
+      "source": "IMG_0347",
+      "pricesVerified": true,
+      "twoPlayerSlotsPerRow": 2,
+      "twoPlayerSlotsVerified": true
+    },
+    {
+      "type": "machine",
+      "priceRows": [
+        20,
+        30,
+        40
+      ],
+      "printedSlotsPerRow": 2,
+      "source": "IMG_0347",
+      "pricesVerified": true,
+      "twoPlayerSlotsPerRow": 1,
+      "twoPlayerSlotsVerified": true
+    }
+  ],
+  "note": "Introductory two-player scope is implemented, including all 135 pipe geometries. Out-of-scope valuations and upgrade families remain deferred.",
+  "schemaVersion": 1,
+  "pipeInventoryReview": {
+    "visibleTotal": 135,
+    "countVerified": true,
+    "geometryTranscribed": true,
+    "batches": [
+      {
+        "source": "IMG_0358",
+        "count": 36
+      },
+      {
+        "source": "IMG_0359",
+        "count": 45
+      },
+      {
+        "source": "IMG_0360",
+        "count": 53
+      },
+      {
+        "source": "IMG_0362",
+        "count": 1,
+        "position": "above contracts"
+      }
+    ],
+    "note": "135 faces manually transcribed in scripts/transcribe-pipes.py; every tile has photo coordinates. Geometry and placement are implemented independently of the remaining turn engine."
+  },
+  "refinementMarkerValues": {
+    "values": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "source": "USER_INTRO_SCOPE",
+    "valuesVerified": true,
+    "copiesPerValue": 3,
+    "countsVerified": true,
+    "photoRequested": false
+  },
+  "valuationTile": {
+    "id": "machine-pipeline-assets",
+    "effectSummary": "Add the asset value of pipelines attached to machines.",
+    "source": "IMG_0365",
+    "verified": true,
+    "usedInIntroductoryGame": true,
+    "implemented": true
+  },
+  "scope": {
+    "players": 2,
+    "valuationNumbers": [
+      1,
+      2,
+      3
+    ],
+    "includeValuationTile": true,
+    "source": [
+      "USER_INTRO_SCOPE",
+      "IMG_0357:p5",
+      "IMG_0365"
+    ]
+  }
+}

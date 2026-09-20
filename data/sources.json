@@ -1,0 +1,192 @@
+{
+  "received": "2026-09-13",
+  "providedBy": "user",
+  "originalsPrivate": true,
+  "sources": [
+    {
+      "id": "IMG_0347",
+      "file": "references/photos/IMG_0347.HEIC",
+      "subject": "main board",
+      "sha256": "62cff4d7b40cd20500df84d87194ad91e7ab01fd5dcdc5dd7a3cadb70c12ecaa",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0348",
+      "file": "references/photos/IMG_0348.HEIC",
+      "subject": "player board",
+      "sha256": "96424ded51018581f2c58ec635cdca4123e08c9e4a68b5cd0b5bb94dfaf52be9",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0349",
+      "file": "references/photos/IMG_0349.HEIC",
+      "subject": "rulebook cover",
+      "sha256": "e063b7fb7aad7e35a346ff7903a4354713088cae07173e97ea15fa0faba2b6a6",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0350",
+      "file": "references/photos/IMG_0350.HEIC",
+      "subject": "rulebook pages 2–3",
+      "sha256": "1f284462514d789d23350e793ae896a6c6b54909e5d5c7d414caf69081d2fce0",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0351",
+      "file": "references/photos/IMG_0351.HEIC",
+      "subject": "rulebook pages 4–5",
+      "sha256": "69889df5ea10785c088a77e044750d06ba653a7e60557724e6f15af1de87ab54",
+      "reviewed": true,
+      "readability": "Superseded by clearer IMG_0356 and IMG_0357."
+    },
+    {
+      "id": "IMG_0352",
+      "file": "references/photos/IMG_0352.HEIC",
+      "subject": "rulebook pages 6–7",
+      "sha256": "13df556c272329cdf6fd81b69302c96cb55ae9b6bb62c787814b51e2191ee033",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0353",
+      "file": "references/photos/IMG_0353.HEIC",
+      "subject": "rulebook pages 8–9",
+      "sha256": "fa8be1c70aa05508bedcc19ab0299e959ce990107d3e130f4c43344813ffff09",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0354",
+      "file": "references/photos/IMG_0354.HEIC",
+      "subject": "rulebook pages 10–11",
+      "sha256": "690884b5db0799e77fe8928e3d115ad1559cd61c93a9adbf440d756f3fdeefab",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0355",
+      "file": "references/photos/IMG_0355.HEIC",
+      "subject": "rulebook page 12",
+      "sha256": "08d2f9012fd09b19b666fb00ce89375aae9e9cad5d18ab3c8826db37678379bb",
+      "reviewed": true,
+      "readability": "reviewed; see field-level exceptions in docs/REFERENCE_REVIEW.md"
+    },
+    {
+      "id": "IMG_0356",
+      "file": "references/photos/IMG_0356.HEIC",
+      "subject": "rulebook page 4, clear setup",
+      "sha256": "a5cc8d34eec7ff4d676e52ffe6e1cb63a0b3283270d294666ae5721934cad09b",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0357",
+      "file": "references/photos/IMG_0357.HEIC",
+      "subject": "rulebook page 5, clear setup",
+      "sha256": "e389820c3b49c77ce9ec84a315a0b9938e1b371d39751be9a8a8e973cc972f42",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0358",
+      "file": "references/photos/IMG_0358.HEIC",
+      "subject": "pipe tiles: 36 (9 rows × 4 columns)",
+      "sha256": "3ba1e9b7b3b8bde27f9a65cfda864ac85bbf47540c32e09d61c24888c3875b59",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0359",
+      "file": "references/photos/IMG_0359.HEIC",
+      "subject": "pipe tiles: 45 (9 rows × 5 columns)",
+      "sha256": "9629e394d88b31615a48d7f7ec4d8a498832420992f584c480eb7de6ccbdcf53",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0360",
+      "file": "references/photos/IMG_0360.HEIC",
+      "subject": "pipe tiles: 53 (first five columns 9 each, last column 8)",
+      "sha256": "b18c10ca67cd89713022b67e369631b7c8d1f3a73f375fb3ab5f19d7973de6ef",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0361",
+      "file": "references/photos/IMG_0361.HEIC",
+      "subject": "24 order tiles (3 rows × 8 columns)",
+      "sha256": "a032a54697e51db3589ea922f859ab37c2159ee10a92a8ce80f5c4043ca1cbf6",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0362",
+      "file": "references/photos/IMG_0362.HEIC",
+      "subject": "30 contract tiles (3 rows × 10 columns), plus 1 pipe tile",
+      "sha256": "d0189a594de0ba3f71cdb6f32a9aed4c8624c56b988d5ec204bc7bbbb619742b",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0363",
+      "file": "references/photos/IMG_0363.HEIC",
+      "subject": "12 upgrade faces and all four action tiles",
+      "sha256": "ebe552fb3f553246179b6eefb65e16330f87cca9fae2fa7d2f4742dfa8f1d1e4",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0364",
+      "file": "references/photos/IMG_0364.HEIC",
+      "subject": "9 upgrade faces: HR, refined markets, engineering",
+      "sha256": "23386cf412cbfc548e011392db13a43de43f39299f1c11a98c1095fd72b11830",
+      "reviewed": true,
+      "readability": "See docs/REFERENCE_REVIEW.md for transcription scope and remaining checks."
+    },
+    {
+      "id": "IMG_0365",
+      "file": "references/photos/IMG_0365.HEIC",
+      "subject": "Valuation tile and six market-overlay three-player faces",
+      "sha256": "2798a9469a4fd47fe28ec5210f8f0d5c843ebd263a0bb597272708c91cf4ba03",
+      "reviewed": true,
+      "readability": "Valuation tile text and all two-player overlay demand counts readable."
+    },
+    {
+      "id": "IMG_0366",
+      "file": "references/photos/IMG_0366.HEIC",
+      "subject": "Six market-overlay two-player faces",
+      "sha256": "37e9c0c1f6d2f1bcb86afd903886ad5529f5bc5d352f15e0b9d1be1b7239d531",
+      "reviewed": true,
+      "readability": "Valuation tile text and all two-player overlay demand counts readable."
+    }
+  ],
+  "lastReceived": "2026-09-14",
+  "clarifications": [
+    {
+      "id": "USER_INTRO_SCOPE",
+      "source": "User message accompanying IMG_0365 and IMG_0366",
+      "facts": {
+        "players": 2,
+        "valuationMode": "introductory only",
+        "refinementValues": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "upgradeCopiesPerFamilyByLevel": {
+          "1": 3,
+          "2": 1,
+          "3": 1
+        },
+        "crudeRefillMaximum": 4,
+        "refinementCopiesPerValue": 3
+      },
+      "rowOrderNote": "Follow-up confirms grouping by visible symbols: contract face photo top-to-bottom low/mid/high; order face photo 3/4/5 barrels. Board displays use reverse order."
+    }
+  ]
+}

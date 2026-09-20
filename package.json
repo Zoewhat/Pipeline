@@ -1,0 +1,22 @@
+{
+  "name": "pipeline-online",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Private two-player Pipeline — introductory base game",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "4.22.2",
+    "socket.io": "4.8.3"
+  },
+  "devDependencies": {
+    "socket.io-client": "4.8.3"
+  },
+  "packageManager": "pnpm@10.11.0"
+}

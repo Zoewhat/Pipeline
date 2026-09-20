@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 136" fill="none">
+  <defs>
+    <linearGradient id="cream" x2="0" y2="1"><stop stop-color="#f8edcf"/><stop offset="1" stop-color="#e5d6b7"/></linearGradient>
+    <linearGradient id="teal" x2="0" y2="1"><stop stop-color="#67959a"/><stop offset=".5" stop-color="#37767b"/><stop offset="1" stop-color="#29565c"/></linearGradient>
+    <linearGradient id="orange" x2="0" y2="1"><stop stop-color="#f0b56b"/><stop offset=".5" stop-color="#db873d"/><stop offset="1" stop-color="#aa592c"/></linearGradient>
+    <clipPath id="tileA"><rect x="7" y="16" width="198" height="100" rx="5"/></clipPath>
+    <clipPath id="tileB"><rect x="215" y="16" width="198" height="100" rx="5"/></clipPath>
+  </defs>
+  <g fill="#101a20"><rect x="7" y="21" width="198" height="100" rx="5"/><rect x="215" y="21" width="198" height="100" rx="5"/></g>
+  <g fill="url(#cream)" stroke="#b8aa8e"><rect x="7" y="16" width="198" height="100" rx="5"/><rect x="215" y="16" width="198" height="100" rx="5"/></g>
+  <g clip-path="url(#tileA)" stroke-linecap="square">
+    <path d="M57 16V36Q57 66 87 66H126Q156 66 156 96V116M7 66H27Q57 66 57 96V116M156 16V36Q156 66 186 66H205" stroke="#244a50" stroke-width="20"/>
+    <path d="M57 16V36Q57 66 87 66H126Q156 66 156 96V116M7 66H27Q57 66 57 96V116M156 16V36Q156 66 186 66H205" stroke="url(#teal)" stroke-width="15"/>
+    <g fill="#52858a" stroke="#244a50"><path d="M101 55h10v22h-10zM46 17h22v7H46zM145 108h22v7h-22z"/></g>
+    <path d="M106 54V49m-6 0h12" stroke="#675643" stroke-width="2"/>
+  </g>
+  <g clip-path="url(#tileB)" stroke-linecap="square">
+    <path d="M215 66H235Q265 66 265 96V116M365 16V116" stroke="#244a50" stroke-width="20"/>
+    <path d="M215 66H235Q265 66 265 96V116M365 16V116" stroke="url(#teal)" stroke-width="15"/>
+    <path d="M265 16V36Q265 66 295 66H413" stroke="#985126" stroke-width="20"/>
+    <path d="M265 16V36Q265 66 295 66H413" stroke="url(#orange)" stroke-width="15"/>
+    <g fill="#d39251" stroke="#985126"><path d="M309 55h10v22h-10zM254 17h22v7H254zM404 55h8v22h-8z"/></g>
+    <path d="M314 54V49m-6 0h12" stroke="#675643" stroke-width="2"/>
+    <g fill="#52858a" stroke="#244a50"><path d="M354 17h22v7H354zM354 108h22v7h-22zM254 108h22v7h-22z"/></g>
+  </g>
+</svg>

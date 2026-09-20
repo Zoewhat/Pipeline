@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "edition": "User physical base game; print revision unidentified",
+  "setup": {
+    "startingCash": 40,
+    "startingTanks": 5,
+    "barrelsPerTank": 2,
+    "recommendedTanks": [
+      2,
+      1,
+      1,
+      1
+    ],
+    "roundsPerYear": [
+      8,
+      6,
+      4
+    ],
+    "sources": [
+      "IMG_0348",
+      "IMG_0352:p6",
+      "IMG_0356:p4",
+      "IMG_0357:p5"
+    ],
+    "verified": true,
+    "verifiedFields": [
+      "startingCash",
+      "startingTanks",
+      "barrelsPerTank",
+      "roundsPerYear",
+      "recommendedTanks"
+    ],
+    "recommendedTanksSource": "IMG_0357:p5"
+  },
+  "costs": {
+    "governmentPipes": {
+      "1": 5,
+      "2": 10,
+      "3": 20,
+      "4": 35,
+      "5": 55
+    },
+    "shopPipeBundles": {
+      "2": 15,
+      "4": 40
+    },
+    "tankPriceRows": [
+      5,
+      10,
+      15
+    ],
+    "machinePriceRows": [
+      20,
+      30,
+      40
+    ],
+    "secondaryAction": 10,
+    "machinePhase": 15,
+    "upgrade": 20,
+    "loanCash": 15,
+    "loanPenaltyTokens": 1,
+    "sources": [
+      "IMG_0347",
+      "IMG_0352:p7",
+      "IMG_0353:p8-9",
+      "IMG_0354:p10"
+    ],
+    "verified": true
+  },
+  "income": {
+    "contractByGrade": [
+      null,
+      20,
+      35,
+      45
+    ],
+    "orderByGrade": [
+      null,
+      30,
+      45,
+      55
+    ],
+    "oilAtEndByGrade": [
+      0,
+      10,
+      20,
+      30
+    ],
+    "pipelineAtEndByGrade": [
+      0,
+      10,
+      20,
+      30
+    ],
+    "sources": [
+      "IMG_0347",
+      "IMG_0348",
+      "IMG_0354:p10"
+    ],
+    "verified": true
+  },
+  "penalties": {
+    "totalByCount": [
+      0,
+      20,
+      50,
+      90,
+      140,
+      200,
+      270,
+      350,
+      440,
+      540,
+      650
+    ],
+    "beyondPrintedTrack": null,
+    "sources": [
+      "IMG_0348",
+      "IMG_0354:p10"
+    ],
+    "verified": true
+  },
+  "refining": {
+    "gradeOrder": [
+      "crude",
+      "low",
+      "mid",
+      "high"
+    ],
+    "colors": [
+      "orange",
+      "teal",
+      "silver"
+    ],
+    "costsAreCumulative": true,
+    "intermediateTankRequired": false,
+    "simultaneous": true,
+    "baseBarrelsPerPipeline": 1,
+    "workerCanRunMachineConnectedPipeline": false,
+    "machineFootprintCountsAsSegment": false,
+    "engineeringBonusPerFourSegments": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    },
+    "sources": [
+      "IMG_0353:p9",
+      "IMG_0354:p10-11"
+    ],
+    "verified": true
+  },
+  "unresolved": [
+    "Pipe geometry transcription from received inventory photos",
+    "Engineering III card/appendix wording difference before implementing throughput"
+  ],
+  "sharedSetup": {
+    "sources": [
+      "IMG_0356:p4",
+      "IMG_0357:p5",
+      "USER_INTRO_SCOPE"
+    ],
+    "scope": "Two-player introductory base game; fixed valuations 1, 2, 3 plus valuation tile.",
+    "contractsPerGradeSelected": 4,
+    "contractsPerGradeDisplayed": 2,
+    "ordersPerSizeDisplayed": 2,
+    "shopPipesPerShop": 4,
+    "upgradeTypes": 5,
+    "recommendedUpgradeTypes": [
+      "government",
+      "engineering",
+      "human-resources",
+      "refined-markets",
+      "shops"
+    ],
+    "refinementMarkersDealt": 9,
+    "firstGameExcludeRefinementValue": 7,
+    "valuationCardsDealt": 3,
+    "recommendedValuationNumbers": [
+      1,
+      2,
+      3
+    ],
+    "randomFirstPlayer": true,
+    "actionTileReverseHasSameEffect": true,
+    "verified": true,
+    "note": "Physical p4 has a 5 players typo in the second contract-count line. The clear 2–3 players: 4 Contracts line is used for this two-player implementation.",
+    "valuationSelection": "fixed-introductory",
+    "valuationNumbers": [
+      1,
+      2,
+      3
+    ]
+  },
+  "deferred": [
+    "Valuations 4–16: outside requested introductory scope",
+    "Three- and four-player play"
+  ]
+}

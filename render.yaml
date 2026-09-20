@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pipeline-online
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && pnpm install --frozen-lockfile
+    startCommand: node server.js
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22
+      - key: BACKUP_SECRET
+        generateValue: true
