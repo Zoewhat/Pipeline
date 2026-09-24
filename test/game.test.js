@@ -79,13 +79,13 @@ test('refinement uses geometry, simultaneous capacity, Engineering throughput an
   s.players[0].upgrades.engineering=3;s=act(s,a);assert.ok(s.players[0].oil.every(b=>b.grade===2));
   const before=structuredClone(s);assert.throws(()=>act(s,{type:'machines',selections:[{pipelineId:l.id,barrelId:'a',toGrade:3}]}),/eligible/);assert.deepEqual(s,before);
 });
-test('all eighteen rounds complete, year refresh proceeds right-to-left, and scoring includes every intro valuation',()=>{
+test('all eighteen rounds complete, year refresh proceeds right-to-left, and scoring omits the disabled valuation cards',()=>{
   let s=initial();s.players[0].oil=[{id:'end-oil',color:'orange',grade:2}];s.players[0].penalties=2;
   s.markets[0].rows[0].slots.forEach(slot=>slot.barrel=null);
   for(let turn=0;turn<16;turn++)s=finish(s);
   assert.equal(s.year,2);assert.equal(s.round,1);assert.deepEqual(s.markets[0].rows[0].slots.map(x=>!!x.barrel),[false,false,true,true,true,true]);
   for(let turn=0;turn<20;turn++)s=finish(s);
-  assert.equal(s.phase,'finished');assert.equal(s.scores[0].total,80);assert.equal(s.scores[1].total,90);assert.equal(s.winner,1);
+  assert.equal(s.phase,'finished');assert.equal(s.scores[0].total,10);assert.equal(s.scores[1].total,40);assert.equal(s.winner,1);
   assert.throws(()=>act(s,{type:'end'}),/not in progress/);
 });
 test('malformed actions and failed bonus choices never mutate authoritative state',()=>{

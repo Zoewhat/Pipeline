@@ -3,11 +3,13 @@
 const express = require('express');
 const { createServer } = require('node:http');
 const { Server } = require('socket.io');
-const { randomBytes, createHash } = require('node:crypto');
+const { randomBytes, randomInt, createHash } = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
 const { createSetup, updateTanks } = require('./game/setup');
 const { createGame, applyAction, publicState } = require('./game/engine');
+const {startClock, settleClock} = require('./game/clock');
+const {validatePresence} = require('./game/presence');
 const catalog = require('./data/components.json');
 const { recoveryStore } = require('./game/recovery');
 
@@ -18,7 +20,7 @@ const nameOf = value => {
 };
 const codeOf = value => typeof value === 'string' ? value.trim().toUpperCase() : '';
 
-function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, 'storage'), backupSecret } = {}) {
+function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, 'storage'), backupSecret, now = Date.now, clockInterval = 1000 } = {}) {
   fs.mkdirSync(storageDir, { recursive: true, mode: 0o700 });
   const recovery = recoveryStore(storageDir, backupSecret);
   const savePath = path.join(storageDir, 'rooms.json');
@@ -30,6 +32,7 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
     for (const room of saved.rooms) rooms.set(room.code, room);
   }
   const connections = new Map();
+  const presence = new Map();
   const app = express();
   app.disable('x-powered-by');
   app.use((req, res, next) => {
@@ -69,7 +72,7 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
   }
   function view(room) {
     return {
-      code: room.code, local: room.local, revision: room.revision,
+      code: room.code, local: room.local, revision: room.revision, change:room.change, serverNow:now(),
       state: publicState(room.state), log: room.log,
       players: room.players.map((p, i) => ({ name: p.name, connected: connections.has(`${room.code}:${room.local ? 0 : i}`) })),
       gameplayAvailable: true, backup: recovery.seal(room)
@@ -81,6 +84,10 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
     return { token, player: { name: nameOf(name), tokenHash: tokenHash(token) } };
   }
   function attach(socket, room, seat) {
+    // Older games receive a fresh allowance on first rejoin after the update.
+    if(room.state.phase==='playing'&&!room.state.clock){
+      const migrated=structuredClone(room);startClock(migrated.state,now());migrated.revision++;migrated.change='clock';commit(migrated);Object.assign(room,migrated);
+    }
     const key = `${room.code}:${seat}`;
     const old = connections.get(key);
     if (old && old !== socket.id) io.sockets.sockets.get(old)?.disconnect(true);
@@ -91,13 +98,13 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
   }
 
   io.on('connection', socket => {
-    let windowStart = Date.now(), requests = 0;
+    let windowStart = Date.now(), requests = 0, presenceRequests = 0;
     function on(event, handler) {
       socket.on(event, (payload, ack) => {
         if (typeof ack !== 'function') return;
         try {
-          if (Date.now() - windowStart > 10000) { requests = 0; windowStart = Date.now(); }
-          if (++requests > 60) throw new Error('Please wait a moment before trying again.');
+          if (Date.now() - windowStart > 10000) { requests = 0; presenceRequests=0; windowStart = Date.now(); }
+          if (event==='presence' ? ++presenceRequests > 100 : ++requests > 60) throw new Error('Please wait a moment before trying again.');
           if (!payload || typeof payload !== 'object' || Array.isArray(payload)) throw new Error('Invalid request.');
           handler(payload, result => ack({ ok: true, ...result }));
         } catch (error) {
@@ -117,6 +124,7 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
       return structuredClone(room);
     }
     function finish(room, message) {
+      room.change = 'action';
       delete room.recoveryBootstrap;
       room.revision++;
       room.log.push({ text: message, at: Date.now() });
@@ -188,17 +196,41 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
       finish(room, `${room.players[seat].name} ${data.ready ? 'locked' : 'unlocked'} their setup.`);
       done({});
     });
+    on('rollFirst', () => { throw Error('The first player is chosen automatically when you start the game.'); });
+    on('presence', (data, done) => {
+      const room=rooms.get(socket.data.roomCode);
+      if(!room||room.local)throw Error('Join an online table first.');
+      const key=`${room.code}:${socket.data.seat}`;
+      const previous=presence.get(key);
+      if(previous&&now()-previous.at<80) {done({});return;}
+      const value={...validatePresence(data),seat:socket.data.seat,revision:room.revision,at:now()};
+      presence.set(key,value);socket.to(room.code).emit('presence',value);done({});
+    });
+    on('getPresence', (data, done) => {
+      const room=rooms.get(socket.data.roomCode);if(!room||room.local)throw Error('Join an online table first.');
+      done({presence:presence.get(`${room.code}:${1-socket.data.seat}`)||null});
+      socket.to(room.code).emit('requestPresence');
+    });
     on('startGame', (data, done) => {
       const room = current(data);
       if (room.players.length !== 2) throw new Error('Wait for your partner to join.');
+      if(room.state.phase!=='setup'||!room.state.ready.every(Boolean))throw Error('Both players must lock their tank setup.');
+      // Keep the saved field name for older tables; new games select a seat directly.
+      if(!room.state.firstRoll)room.state.firstRoll={winner:randomInt(0,2)};
+      room.state.firstRoll.revealAt=now()+3200;
       room.state = createGame(room.state);
-      finish(room, 'The three-year game has begun.');
+      startClock(room.state,room.state.firstRoll.revealAt+1200);
+      const roll=room.state.firstRoll;
+      finish(room, `${room.players[roll.winner].name} was chosen to go first. The three-year game has begun.`);
       done({});
     });
     on('gameAction', (data, done) => {
       const room = current(data);
       const seat = room.local ? data.seat : socket.data.seat;
+      settleClock(room.state,now());
+      const turnKey = `${room.state.year}:${room.state.round}:${room.state.turnIndex}`;
       room.state = applyAction(room.state, seat, data.action);
+      if(room.state.phase==='playing' && turnKey!==`${room.state.year}:${room.state.round}:${room.state.turnIndex}`)startClock(room.state,now());
       const label = {work:'completed a work action',fulfill:'delivered oil',bonus:'collected an upgrade benefit',machines:'ran their machines',skip:'passed an action',end:'ended their turn'}[data.action.type];
       finish(room, `${room.players[seat].name} ${label}${data.action.space ? ` (${data.action.space})` : ''}.`);
       done({});
@@ -220,7 +252,17 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
     });
   });
 
-  return { app, server, io, close: () => new Promise(resolve => io.close(resolve)) };
+  const ticker=setInterval(()=>{
+    for(const saved of rooms.values()){
+      if(saved.state.phase!=='playing'||!saved.state.clock)continue;
+      const room=structuredClone(saved),amount=settleClock(room.state,now());
+      if(!amount)continue;
+      room.revision++;room.change='clock';
+      room.log.push({text:`${room.players[room.state.clock.actor].name} paid $${amount} in overtime.`,at:now()});room.log=room.log.slice(-40);
+      try{commit(room);broadcast(room);}catch(error){console.error('Clock save failed:',error.code||error.message);}
+    }
+  },clockInterval);ticker.unref();
+  return { app, server, io, close: () => new Promise(resolve => {clearInterval(ticker);io.close(resolve);}) };
 }
 
 if (require.main === module) {

@@ -13,3 +13,7 @@ Read README.md and docs/IMPLEMENTATION.md before extending gameplay. User photos
 Server is authoritative. Never accept a player index from a remote client as authorization. Actions must be atomic, persisted before broadcast, version checked, and tested for malformed input and seat isolation. No private seat credentials in broadcasts. Offline seats remain reserved. Preserve reconnect behavior.
 
 File persistence alone is not durable on Render free; do not claim otherwise. Persistent storage is needed before relying on the app for real games. render.yaml provisions only the free preview; no deployment has been made.
+
+## September 20 user instructions supersede the earlier preset
+
+The user explicitly disabled valuation cards: score oil and pipelines once; keep the separate machine-pipeline tile, omit the tank-card bonus. The published introductory preset intentionally repeats assets via cards 1/2, so document this as a user-selected variation. Turn clocks allow five minutes each turn, then transfer $5 per completed extra minute, including negative balances. Read docs/SEPTEMBER_UPDATE.md for the twin-panel interface, read-only presence relay, generated artwork and verification. Never change the sibling Splendor project.

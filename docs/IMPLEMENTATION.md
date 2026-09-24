@@ -1,3 +1,7 @@
+# September 20 update
+
+The active interface and scoring have changed: see [SEPTEMBER_UPDATE.md](SEPTEMBER_UPDATE.md). Both panels now have identical tabs, the board has generated sunset artwork, and dice, read-only partner following and server-owned turn clocks are implemented. Valuation cards are disabled per the user’s latest instruction; the separate machine tile remains. Older preset/layout descriptions below describe the earlier implementation.
+
 # Implementation status
 
 The fixed two-player introductory game now has an authoritative engine and an interactive shared table. It is playable locally and has completed an initial 18-round two-browser playthrough. Read README.md for controls, test coverage and deployment status.

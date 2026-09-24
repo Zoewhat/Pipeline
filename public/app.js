@@ -5,6 +5,7 @@ const socket = io({ autoConnect: false });
 const STORE = 'pipeline.seats.v1';
 let mode = 'create', room = null, session = null, busy = false, noticeTimer;
 let draftTanks = {};
+let rollTimer=null,rollKey=null,serverOffset=0;
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sound = name => window.PipelineSound?.play(name);
 function readStore() { try { return JSON.parse(localStorage.getItem(STORE)) || {}; } catch { return {}; } }
@@ -46,7 +47,6 @@ async function run(action) {
   finally { busy = false; updateConnection(); if (room) render(); }
 }
 function updateConnection() {
-  $('connection').textContent = socket.connected ? (room ? 'Connected to your table' : 'Ready to connect you') : 'Reconnecting…';
   $('submit-room').disabled = busy || !socket.connected;
   $('resume').disabled = busy || !socket.connected;
   $('leave').disabled = busy || !socket.connected;
@@ -61,7 +61,6 @@ function setMode(next) {
   $('code-field').hidden = mode !== 'join'; $('code').required = mode === 'join';
   $('partner-field').hidden = mode !== 'local'; $('partner').required = mode === 'local';
   $('submit-room').innerHTML = `${mode === 'join' ? 'Join your partner' : mode === 'local' ? 'Open a shared table' : 'Create a private table'} <span>↗</span>`;
-  $('mode-help').textContent = mode === 'join' ? 'Use the table code your partner sent you.' : mode === 'local' ? 'Take turns at one shared screen.' : 'Create a table, then share its invite link with your partner.';
 }
 document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => setMode(button.dataset.mode)));
 $('room-form').addEventListener('submit', event => {
@@ -88,28 +87,76 @@ $('leave').addEventListener('click', () => run(async () => {
 $('copy').addEventListener('click', async () => {
   if (!room) return;
   const url = new URL(location.origin); url.searchParams.set('room', room.code);
-  try { await navigator.clipboard.writeText(url.href); notice('Invite link copied. Send it to your partner.'); }
+  try { await navigator.clipboard.writeText(url.href); notice(room.local?'Table link copied. This is a same-device table; choose Create a table for remote play.':'Invite link copied. Send it to your partner.'); }
   catch { notice(`Share this table code: ${room.code}`); }
   sound('click');
 });
+
+function showOpeningRoll() {
+  const roll=room.state.firstRoll,stage=$('opening-roll');
+  const now=Date.now()+serverOffset;
+  if(room.state.phase!=='playing'||!roll?.revealAt||now>=roll.revealAt+1200){
+    clearInterval(rollTimer);rollTimer=null;stage.hidden=true;return false;
+  }
+  $('table').hidden=true;stage.hidden=false;
+  const key=`${room.code}:${roll.revealAt}`;
+  if(key!==rollKey){
+    clearInterval(rollTimer);rollTimer=null;
+    rollKey=key;
+    stage.querySelectorAll('[data-roll-name]').forEach(n=>n.textContent=room.players[Number(n.dataset.rollName)].name);
+    $('roll-result').textContent='Choosing the first player…';
+    stage.querySelectorAll('[data-starter-avatar]').forEach(n=>{
+      const words=room.players[Number(n.dataset.starterAvatar)].name.trim().split(/\s+/);
+      n.textContent=words.length>1?words.map(w=>Array.from(w)[0]).slice(0,2).join('').toUpperCase():Array.from(words[0]).slice(0,2).join('').toUpperCase();
+    });
+    stage.querySelectorAll('.roll-player').forEach(n=>n.classList.remove('roll-winner','starter-highlight'));
+    stage.focus({preventScroll:true});
+  }
+  if(!rollTimer){
+    const pips=[[],[4],[0,8],[0,4,8],[0,2,6,8],[0,2,4,6,8],[0,2,3,5,6,8]];
+    const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const tick=()=>{
+      if(!room||`${room.code}:${room.state.firstRoll?.revealAt}`!==key){clearInterval(rollTimer);rollTimer=null;stage.hidden=true;return;}
+      const time=Date.now()+serverOffset,settled=time>=roll.revealAt;
+      const progress=Math.max(0,Math.min(1,(time-roll.revealAt+3200)/3200));
+      const highlighted=settled?roll.winner:(Math.floor(14*(1-(1-progress)**2))+roll.winner)%2;
+      stage.querySelectorAll('.roll-player').forEach((card,i)=>card.classList.toggle('starter-highlight',(!reduced||settled)&&i===highlighted));
+      if(settled){
+        const result=`${room.players[roll.winner].name} goes first`;
+        if($('roll-result').textContent!==result){
+          $('roll-result').textContent=result;
+          stage.querySelectorAll('.roll-player')[roll.winner].classList.add('roll-winner');
+          sound('confirm');
+        }
+      }
+      if(time>=roll.revealAt+1200){
+        clearInterval(rollTimer);rollTimer=null;stage.hidden=true;render();
+        $('game-board').tabIndex=-1;$('game-board').focus({preventScroll:true});
+      }
+    };
+    rollTimer=setInterval(tick,90);tick();
+  }
+  return true;
+}
 
 function render() {
   if (!room) return;
   $('lobby').hidden = true; $('table').hidden = false;
   $('table-code').textContent = room.code;
-  $('copy').hidden = room.local;
+  $('table-identity').hidden = room.players.length === 2;
+  $('copy').hidden = room.local && room.state.phase !== 'setup';
   $('download-save').hidden = !session || !room.backup;
   if (session && room.backup) {
     try { const saved=readStore(), key=`${session.code}:${session.seat}`;
       saved[key]={...saved[key],...session,backup:room.backup}; localStorage.setItem(STORE,JSON.stringify(saved));
     } catch {}
   }
+  if(showOpeningRoll())return;
   $('waiting').hidden = room.players.length === 2;
   const setup = room.state.phase === 'setup';
-  $('table-title').textContent = setup ? 'Prepare your refinery.' : 'Your shared table.';
-  document.querySelector('.setup-intro').hidden = !setup;
   $('players').hidden = !setup;
-  $('start-game').hidden = !setup || room.players.length !== 2 || !room.state.ready?.every(Boolean);
+  $('start-game').hidden = !setup;
+  $('start-game').disabled = busy || !socket.connected || room.players.length !== 2 || !room.state.ready?.every(Boolean);
   $('log').innerHTML = [...room.log].reverse().map(entry => `<li>${escapeHTML(entry.text)}</li>`).join('');
   PipelineTable.render(room, session, async action => {
     if (busy) throw new Error('Waiting for the previous action.');
@@ -127,8 +174,8 @@ function render() {
     const tanks = draftTanks[seat] || room.state.tanks[seat];
     const total = tanks.reduce((a, b) => a + b, 0);
     const disabled = !mine || ready || busy || !socket.connected;
-    return `<article class="player"><div class="player-top"><div><div class="player-name">${escapeHTML(player.name)}</div><p class="player-tag">${mine ? 'YOUR REFINERY' : 'PARTNER’S REFINERY'} · ${player.connected ? 'Connected' : 'Away'}${ready ? ' · Setup locked' : ''}</p></div><div class="cash">$40<small>starting cash</small></div></div>
-      ${grades.map((grade, index) => `<div class="tank-row"><span class="tank-grade">${grade}<small>${tanks[index] * 2} barrel capacity</small></span><div class="tank-icons" aria-hidden="true">${Array.from({ length: tanks[index] }, () => '<span class="tank">Ⅱ</span>').join('')}</div><div class="tank-controls"><button data-tank="${seat},${index},-1" aria-label="Remove ${grade} tank for ${escapeHTML(player.name)}" ${disabled || tanks[index] === 0 ? 'disabled' : ''}>−</button><output aria-label="${grade} tanks">${tanks[index]}</output><button data-tank="${seat},${index},1" aria-label="Add ${grade} tank for ${escapeHTML(player.name)}" ${disabled || tanks[index] === 5 || total === 5 ? 'disabled' : ''}>+</button></div></div>`).join('')}
+    return `<article class="player"><div class="player-top"><div><div class="player-name">${escapeHTML(player.name)}</div></div><div class="cash">$40<small>starting cash</small></div></div>
+      ${[3,2,1,0].map(index => { const grade=grades[index]; return `<div class="tank-row"><span class="tank-grade">${grade}<small>${tanks[index] * 2} barrel capacity</small></span><div class="tank-icons" aria-hidden="true">${Array.from({ length: tanks[index] }, () => '<span class="tank">Ⅱ</span>').join('')}</div><div class="tank-controls"><button data-tank="${seat},${index},-1" aria-label="Remove ${grade} tank for ${escapeHTML(player.name)}" ${disabled || tanks[index] === 0 ? 'disabled' : ''}>−</button><output aria-label="${grade} tanks">${tanks[index]}</output><button data-tank="${seat},${index},1" aria-label="Add ${grade} tank for ${escapeHTML(player.name)}" ${disabled || tanks[index] === 5 || total === 5 ? 'disabled' : ''}>+</button></div></div>`;}).join('')}
       <p class="tank-total ${total !== 5 ? 'invalid' : ''}">${total === 5 ? (ready ? 'Five tanks saved and locked.' : mine ? '5 of 5 tanks placed. Remove one to move it to another grade.' : '5 of 5 tanks placed.') : `${5 - total} tank${5 - total === 1 ? '' : 's'} left to place.`}</p>
       <div class="player-actions">${mine ? `<button class="primary" data-ready="${seat}" ${busy || !socket.connected || total !== 5 ? 'disabled' : ''}>${ready ? 'Unlock setup' : 'Save & lock'}</button>` : `<span class="helper">${ready ? 'Your partner has finished their setup.' : 'Your partner is arranging their tanks.'}</span>`}</div></article>`;
   }).join('');
@@ -159,7 +206,10 @@ $('players').addEventListener('click', event => {
   });
 });
 
-socket.on('state', data => { room = data; updateConnection(); render(); });
+socket.on('state', data => {
+  serverOffset=(data.serverNow||Date.now())-Date.now();
+  room = data; updateConnection(); render();
+});
 socket.on('connect', async () => {
   updateConnection();
   let active = session;

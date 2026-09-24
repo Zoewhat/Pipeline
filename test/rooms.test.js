@@ -130,5 +130,35 @@ test('encrypted browser recovery restores a lost server save only with the right
   t.after(async()=>{client.disconnect();await app.close();rmSync(one,{recursive:true,force:true});rmSync(two,{recursive:true,force:true});});
   assert.equal((await call(client,'resumeRoom',{...owner,token:'a'.repeat(64),backup})).ok,false);
   assert.equal((await call(client,'resumeRoom',{...owner,backup:backup.slice(0,-8)+'abcdefgh'})).ok,false);
-  assert.equal((await call(client,'resumeRoom',{...owner,backup})).ok,true);assert.equal(client.latest.code,owner.code);assert.equal(client.latest.players[0].name,'Recovered');
+  assert.equal((await call(client,'resumeRoom',{...owner,backup})).ok,true);await waitState(client,s=>s.code===owner.code);assert.equal(client.latest.code,owner.code);assert.equal(client.latest.players[0].name,'Recovered');
+});
+
+test('first-player selection and view presence use the connected seat, while timer transfers persist before broadcast',async t=>{
+ const dir=mkdtempSync(path.join(tmpdir(),'pipeline-presence-clock-'));let now=1000;
+ const app=createApp({storageDir:dir,now:()=>now,clockInterval:10});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const url=`http://127.0.0.1:${app.server.address().port}`;
+ const a=await connect(url),b=await connect(url),stranger=await connect(url);t.after(async()=>{[a,b,stranger].forEach(s=>s.disconnect());await app.close();rmSync(dir,{recursive:true,force:true});});
+ const owner=await call(a,'createRoom',{name:'A'});await call(b,'joinRoom',{code:owner.code,name:'B'});await waitState(a,s=>s.players.length===2);
+ assert.equal((await call(stranger,'startGame',{revision:a.latest.revision})).ok,false);
+ assert.equal((await call(a,'rollFirst',{revision:a.latest.revision,winner:1,dice:[1,6]})).ok,false);
+ assert.equal((await call(a,'startGame',{revision:a.latest.revision})).ok,false);
+ assert.equal(a.latest.state.firstRoll,undefined);
+ for(const s of [a,b]){await call(s,'setReady',{ready:true,tanks:[2,1,1,1],revision:s.latest.revision});await waitState(s===a?b:a,x=>x.revision===s.latest.revision);}
+ await call(a,'startGame',{revision:a.latest.revision});await waitState(b,s=>s.state.phase==='playing');
+ const roll=a.latest.state.firstRoll;assert.ok([0,1].includes(roll.winner));assert.equal(roll.dice,undefined);assert.equal(a.latest.state.turn.actor,roll.winner);assert.deepEqual(b.latest.state.firstRoll,roll);
+ const startedRevision=a.latest.revision;assert.equal((await call(a,'startGame',{revision:startedRevision})).ok,false);assert.equal(a.latest.revision,startedRevision);assert.deepEqual(a.latest.state.firstRoll,roll);
+ const revision=a.latest.revision,received=new Promise(r=>b.once('presence',r));assert.equal((await call(a,'presence',{left:'government',right:'refinery-0',overview:false,seat:1,token:'bad'})).ok,true);const data=await received;assert.equal(data.seat,0);assert.equal(data.token,undefined);assert.equal(a.latest.revision,revision);assert.equal((await call(stranger,'getPresence',{})).ok,false);
+ assert.equal(roll.revealAt,4200);assert.equal(a.latest.state.clock.startedAt,5400);
+ const actor=roll.winner;now=a.latest.state.clock.startedAt+360000;await waitState(a,s=>s.state.players[actor].cash===35);assert.equal(a.latest.state.players[1-actor].cash,45);assert.equal(a.latest.change,'clock');const persisted=JSON.parse(readFileSync(path.join(dir,'rooms.json'))).rooms[0];assert.equal(persisted.revision,a.latest.revision);assert.equal(persisted.state.clock.chargedMinutes,1);
+ const active=actor===0?a:b;await waitState(active,s=>s.revision===a.latest.revision);await call(active,'gameAction',{revision:active.latest.revision,action:{type:'skip'}});await call(active,'gameAction',{revision:active.latest.revision,action:{type:'end'}});assert.equal(active.latest.state.clock.startedAt,now);assert.equal(active.latest.state.clock.chargedMinutes,0);
+});
+
+test('a pre-clock saved game gets one fresh allowance when its reserved seat rejoins',async t=>{
+ const dir=mkdtempSync(path.join(tmpdir(),'pipeline-clock-migration-'));let app=await start(dir),client=await connect(app.url);
+ const owner=await call(client,'createRoom',{name:'A',local:true,partnerName:'B'});
+ for(const seat of [0,1])await call(client,'setReady',{seat,ready:true,tanks:[2,1,1,1],revision:client.latest.revision});
+ await call(client,'startGame',{revision:client.latest.revision});client.disconnect();await app.close();
+ const file=path.join(dir,'rooms.json'),saved=JSON.parse(readFileSync(file));delete saved.rooms[0].state.clock;require('node:fs').writeFileSync(file,JSON.stringify(saved));
+ app=createApp({storageDir:dir,now:()=>100000});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));client=await connect(`http://127.0.0.1:${app.server.address().port}`);
+ t.after(async()=>{client.disconnect();await app.close();rmSync(dir,{recursive:true,force:true});});
+ assert.equal((await call(client,'resumeRoom',owner)).ok,true);await waitState(client,s=>Boolean(s.state.clock));assert.equal(client.latest.state.clock.startedAt,100000);assert.deepEqual(client.latest.state.players.map(p=>p.cash),[40,40]);assert.equal(JSON.parse(readFileSync(file)).rooms[0].state.clock.startedAt,100000);
 });

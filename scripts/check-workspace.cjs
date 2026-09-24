@@ -1,178 +1,46 @@
 'use strict';
-// Optional browser regression check. Requires Playwright and a local Chrome binary.
-// PLAYWRIGHT_MODULE can point to an existing Playwright installation.
-const assert = require('node:assert/strict');
-const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
-const { mkdtempSync, rmSync } = require('node:fs');
-const { tmpdir } = require('node:os');
-const path = require('node:path');
-const { createApp } = require('../server');
-
-(async () => {
-  const dir = mkdtempSync(path.join(tmpdir(), 'pipeline-workspace-'));
-  const app = createApp({ storageDir: dir });
-  let browser;
-  const errors = [];
-  try {
-    await new Promise(resolve => app.server.listen(0, '127.0.0.1', resolve));
-    const url = `http://127.0.0.1:${app.server.address().port}`;
-    browser = await chromium.launch({headless:true, ...(process.env.CHROME_PATH ? {executablePath:process.env.CHROME_PATH} : {})});
-    const contexts = await Promise.all([browser.newContext({viewport:{width:1366,height:768}}), browser.newContext({viewport:{width:1366,height:768}})]);
-    const pages = await Promise.all(contexts.map(c=>c.newPage()));
-    for(const page of pages){page.on('pageerror',e=>errors.push(e.message));await page.goto(url);}
-    await pages[0].locator('#name').fill('Refinery A');
-    await pages[0].locator('#submit-room').click();
-    await pages[0].locator('#table-code').filter({hasText:/[A-F0-9]{8}/}).waitFor();
-    const code=await pages[0].locator('#table-code').innerText();
-    await pages[1].locator('[data-mode="join"]').click();
-    await pages[1].locator('#name').fill('Refinery B');await pages[1].locator('#code').fill(code);
-    await pages[1].locator('#submit-room').click();
-    for(let i=0;i<2;i++)await pages[i].locator(`[data-ready="${i}"]`).click();
-    await pages[0].locator('#start-game').click();
-    for(const page of pages)await page.locator('.workspace-stage').waitFor();
-    const state=page=>page.evaluate(()=>room.state);
-    const current=async()=>pages[(await state(pages[0])).turn.actor];
-    const commit=async page=>{const revision=await page.evaluate(()=>room.revision);await page.locator('[data-command="confirm"]').click();await page.waitForFunction(r=>room.revision>r,revision);};
-    const end=async page=>{if((await state(page)).turn.stage==='secondary'){await page.locator('[data-command="skip"]').click();await page.waitForFunction(()=>room.state.turn.stage==='machine');}const before=await page.evaluate(()=>room.revision);await page.locator('[data-command="end"]').click();await pages[0].waitForFunction(r=>room.revision>r,before);await pages[1].waitForFunction(r=>room.revision>r,before);};
-    const checkViewport=async page=>{assert.deepEqual(await page.evaluate(()=>[document.documentElement.scrollWidth,document.documentElement.scrollHeight]),[1366,768]);};
-    const active=await current(),seat=(await state(active)).turn.actor,observer=pages[1-seat];
-    await observer.locator('[data-area-view="markets"]').click();
-    await observer.locator('[data-camera-action="in"]').filter({visible:true}).first().click();
-    // An inactive seat can browse but cannot interact with another player's game pieces.
-    assert.equal(await observer.locator('[data-government]:not([disabled])').count(),0);
-    await active.locator('[data-government]:not([disabled])').first().click();
-    const quadrant=(await active.locator('[data-government].chosen').getAttribute('data-government')).split(',')[0];
-    await active.locator(`[data-government="${quadrant},1"]`).click();
-    await active.locator('[data-command="rotate"]').click();
-    await active.locator('[data-area-view="markets"]').click();
-    await active.locator('[data-area-view="government"]').click();
-    assert.equal(await active.locator('[data-government].chosen').count(),2);
-    assert.equal((await state(active)).players[seat].cash,40);
-    const network=active.locator('.refinery:not([hidden]) .network-scroll');
-    assert.ok((await network.boundingBox()).height>220,'Pipe placement needs useful vertical room');
-    await active.locator('.refinery:not([hidden]) [data-cell="0,0"]').click();
-    await active.locator('.refinery:not([hidden]) [data-cell="1,0"]').click();
-    await checkViewport(active);
-    if(process.env.SCREENSHOT_DIR)await active.screenshot({path:path.join(process.env.SCREENSHOT_DIR,'pipeline-placement.png')});
-    await commit(active);
-    await observer.waitForFunction(i=>room.state.players[i].pipes.length===2,seat);
-    assert.equal((await state(active)).players[seat].cash,30);
-    assert.equal(await observer.locator('[data-area-view="markets"]').getAttribute('aria-pressed'),'true');
-    assert.equal(await observer.locator('.refinery:not([hidden]) [data-zoom-label]').innerText(),'120%');
-    assert.equal(await observer.locator('.refinery:not([hidden])').getAttribute('data-player'),String(1-seat));
-    console.log('PASS: atomic two-pipe purchase, rotation, persistent draft, fixed viewport, independent remote view');
-    await end(active);
-    const shopper=await current(),shopSeat=(await state(shopper)).turn.actor;
-    await shopper.locator('[data-area-view="shops"]').click();
-    await shopper.locator('[data-shopitem^="tank,"]:not([disabled])').first().click();
-    await shopper.locator('[data-tankgrade="0"]').selectOption('2');
-    await shopper.locator('#next-order').selectOption('0');
-    await shopper.locator('[data-shopitem^="tank,"]:not([disabled])').nth(1).click();
-    assert.equal(await shopper.locator('[data-tankgrade="0"]').inputValue(),'2');
-    assert.equal(await shopper.locator('#next-order').inputValue(),'0');
-    await shopper.locator('[data-tankgrade="1"]').selectOption('3');
-    await shopper.locator('[data-area-view="upgrades"]').click();await shopper.locator('[data-area-view="shops"]').click();
-    assert.equal(await shopper.locator('[data-tankgrade="1"]').inputValue(),'3');
-    await commit(shopper);
-    assert.deepEqual((await state(shopper)).players[shopSeat].tanks,[2,1,2,2]);
-    console.log('PASS: tank grades and next-round order survive draft rerenders and area switching');
-    await end(shopper);
-    const trader=await current(),tradeSeat=(await state(trader)).turn.actor;
-    await trader.locator('[data-area-view="markets"]').click();
-    const cash=(await state(trader)).players[tradeSeat].cash;
-    const oilSlot=trader.locator('[data-market^="crude,"]:not([disabled])').filter({has:trader.locator('.oil-chip')}).first();
-    const price=Number((await oilSlot.locator('small').innerText()).replace('$',''));
-    await oilSlot.click();
-    await checkViewport(trader);
-    assert.match(await trader.locator('.draft-quote').innerText(),new RegExp(`Selected cost \\$${price}`));
-    if(process.env.SCREENSHOT_DIR)await trader.screenshot({path:path.join(process.env.SCREENSHOT_DIR,'pipeline-market.png')});
-    await commit(trader);
-    assert.equal((await state(trader)).players[tradeSeat].oil.length,1);
-    assert.equal((await state(trader)).players[tradeSeat].cash,cash-price);
-    console.log('PASS: buy oil with market, inventory, total price and confirmation on one screen');
-    await trader.locator('[data-overview]').click();
-    assert.equal(await trader.locator('[data-overview-area]:visible').count(),6);
-    assert.equal(await trader.locator('.refinery:visible').count(),2);
-    await checkViewport(trader);
-    if(process.env.SCREENSHOT_DIR)await trader.screenshot({path:path.join(process.env.SCREENSHOT_DIR,'pipeline-overview.png')});
-    await trader.locator('[data-overview-area="upgrades"]').click();
-    assert.equal(await trader.locator('[data-area-view="upgrades"]').getAttribute('aria-pressed'),'true');
-    await trader.locator('[data-refinery-view="both"]').click();
-    const boards=await trader.locator('.refinery:visible').evaluateAll(nodes=>nodes.map(el=>el.getBoundingClientRect().toJSON()));
-    assert.equal(boards[0].y,boards[1].y);assert.ok(boards[1].x>=boards[0].right);
-    await trader.locator('[data-area-view="upgrades"]').click();
-    const separator=trader.locator('[role="separator"]');
-    await separator.focus();await separator.press('ArrowRight');
-    assert.equal(await separator.getAttribute('aria-valuenow'),'50');
-    await trader.locator('[data-table-info]').click();assert.equal(await trader.locator('.workspace-information').isVisible(),true);
-    await trader.locator('[data-table-info]').click();
-    await trader.setViewportSize({width:390,height:844});
-    assert.equal(await trader.evaluate(()=>document.documentElement.scrollWidth),390);
-    await trader.setViewportSize({width:1366,height:768});
-    await end(trader);
-    while((await state(pages[0])).turn.actor!==tradeSeat){
-      const page=await current();await page.locator('[data-command="skip"]').click();
-      await page.waitForFunction(()=>room.state.turn.stage==='machine');await end(page);
-    }
-    await trader.locator('[data-area-view="markets"]').click();
-    await trader.locator('[data-market-view="crude"]').click();
-    const beforeSale=(await state(trader)).players[tradeSeat].cash;
-    const empty=trader.locator('[data-market^="crude,"]:not([disabled])').filter({has:trader.locator('.empty-oil')}).first();
-    const salePrice=Number((await empty.locator('small').innerText()).replace('$',''));
-    await empty.click();
-    await trader.locator('#sale-0').selectOption((await state(trader)).players[tradeSeat].oil[0].id);
-    await trader.locator('[data-market-view="market-1"]').click();await trader.locator('[data-market-view="crude"]').click();
-    assert.notEqual(await trader.locator('#sale-0').inputValue(),'');
-    await commit(trader);
-    assert.equal((await state(trader)).players[tradeSeat].cash,beforeSale+salePrice);
-    assert.equal((await state(trader)).players[tradeSeat].oil.length,0);
-    console.log('PASS: oil sale and selected barrel survive market subview switching');
-    await end(trader);
-    // Finish the game through UI buttons to cover round updates and the final score view.
-    let turns=0;
-    while((await state(pages[0])).phase!=='finished'){
-      if(turns++>40)throw Error('Game did not finish');
-      const page=await current();
-      if((await state(page)).turn.stage==='work'){await page.locator('[data-command="skip"]').click();await page.waitForFunction(()=>room.state.turn.stage==='machine');}
-      await end(page);
-    }
-    assert.equal(await pages[0].locator('.score-board').isVisible(),true);
-    await pages[0].locator('[data-area-view="government"]').click();
-    await checkViewport(pages[0]);
-    assert.deepEqual(errors,[]);
-    console.log('PASS: overview navigation, keyboard resizing, mobile overflow, all 18 rounds, final scoring, no browser errors');
-    // Synthetic, local-only rendering fixture: a very wide late-game refinery.
-    const stress=pages[0];
-    await stress.evaluate(async()=>{
-      const catalog=await (await fetch('/catalog.json')).json();
-      const fixture=structuredClone(room);fixture.code='UI-STRESS';fixture.local=true;
-      fixture.state.phase='playing';fixture.state.turn={actor:0,stage:'work',mainCount:0};fixture.state.bonuses=[];
-      fixture.state.players[0].pipes=catalog.pipeTiles.slice(0,60).map((tile,i)=>({id:tile.id,x:i*2,y:0,rotation:0}));
-      fixture.state.players[0].machines=[];fixture.state.players[0].pipelines=[];
-      window.workspaceFixture=fixture;
-      PipelineTable.render(fixture,{seat:0},async()=>{throw Error('Rendering fixture must not send actions');},message=>{throw Error(message);},false);
-    });
-    await stress.locator('.refinery:not([hidden]) [data-camera-action="fit"]').click();
-    assert.ok(await stress.locator('.refinery:not([hidden]) .network-scroll').evaluate(el=>el.scrollWidth<=el.clientWidth+1&&el.scrollHeight<=el.clientHeight+1));
-    await stress.locator('.refinery:not([hidden]) [data-camera-action="reset"]').click();
-    const wide=stress.locator('.refinery:not([hidden]) .network-scroll');
-    const box=await wide.boundingBox();
-    await stress.mouse.move(box.x+150,box.y+70);await stress.mouse.down();await stress.mouse.move(box.x+60,box.y+70,{steps:8});await stress.mouse.up();
-    assert.ok(await wide.evaluate(el=>el.scrollLeft)>70);
-    assert.equal(await stress.locator('[data-command="confirm"]').count(),0,'Panning must not place a worker');
-    const offset=await wide.evaluate(el=>el.scrollLeft);
-    await stress.evaluate(()=>PipelineTable.render(window.workspaceFixture,{seat:0},async()=>{},console.error,false));
-    assert.equal(await wide.evaluate(el=>el.scrollLeft),offset);
-    for(const [width,height] of [[1280,720],[1440,900],[1920,1080]]){
-      await stress.setViewportSize({width,height});
-      assert.deepEqual(await stress.evaluate(()=>[document.documentElement.scrollWidth,document.documentElement.scrollHeight]),[width,height]);
-    }
-    await stress.locator('#leave').click();await stress.locator('#lobby').waitFor();
-    assert.notEqual(await stress.evaluate(()=>getComputedStyle(document.body).overflow),'hidden');
-    assert.deepEqual(errors,[]);
-    console.log('PASS: 60-tile refinery fit, drag without accidental action, camera restoration, desktop sizes, return to lobby');
-  } finally {
-    if(browser)await browser.close();
-    await app.close();rmSync(dir,{recursive:true,force:true});
-  }
-})().catch(error=>{console.error(error);process.exitCode=1;});
+const assert=require('node:assert/strict');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');const {createApp}=require('../server');
+(async()=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'pipeline-ui-')),app=createApp({storageDir:dir});let browser;const errors=[];
+ try{
+ await new Promise(r=>app.server.listen(0,'127.0.0.1',r));const url=`http://127.0.0.1:${app.server.address().port}`;
+ browser=await chromium.launch({headless:true,...(process.env.CHROME_PATH?{executablePath:process.env.CHROME_PATH}:{})});
+ const contexts=await Promise.all([browser.newContext({viewport:{width:1440,height:900}}),browser.newContext({viewport:{width:1440,height:900}})]),pages=await Promise.all(contexts.map(c=>c.newPage()));
+ for(const p of pages){p.on('pageerror',e=>errors.push(e.message));await p.goto(url);}
+ await pages[0].locator('#name').fill('Alex');await pages[0].locator('#submit-room').click();await pages[0].locator('#players').waitFor();
+ const code=await pages[0].locator('#table-code').innerText();await pages[1].locator('[data-mode="join"]').click();await pages[1].locator('#name').fill('Robin');await pages[1].locator('#code').fill(code);await pages[1].locator('#submit-room').click();
+ for(let i=0;i<2;i++){for(const g of [0,0,1,2,3])await pages[i].locator(`[data-tank="${i},${g},1"]`).click();await pages[i].locator(`[data-ready="${i}"]`).click();}
+ await pages[0].locator('#start-game').click();for(const p of pages)await p.locator('.twin-stage').waitFor();
+ const actor=await pages[0].evaluate(()=>room.state.turn.actor),active=pages[actor],observer=pages[1-actor];const panel=(p,side)=>p.locator(`[data-panel="${side}"]`);const tab=async(p,side,id)=>panel(p,side).locator(`[data-panel-tab="${id}"]`).click();
+ assert.equal(await panel(active,'left').locator('[data-panel-tab]').count(),11);assert.equal(await panel(active,'right').locator('[data-panel-tab]').count(),11);assert.equal(await active.locator('.persistent-costs').isVisible(),true);
+ await tab(active,'left','government');await panel(active,'left').locator('[data-government="0,0"]').click();await panel(active,'left').locator('[data-government="0,1"]').click();
+ await panel(active,'right').locator('[data-cell="0,0"]').click();await panel(active,'right').locator('[data-cell="2,0"]').click();assert.equal(await active.locator('.pending-pipe').count(),2);
+ await panel(active,'right').locator('[data-cell="0,0"]').click();assert.equal(await active.locator('.pending-pipe').count(),1);await panel(active,'right').locator('[data-cell="0,0"]').click();assert.equal(await active.locator('.pending-pipe').count(),2);
+ await active.locator('[data-command="confirm"]').click();await active.waitForFunction(()=>room.state.players[room.state.turn.actor].pipes.length===2);
+ await tab(observer,'left','market-2');await tab(active,'left','upgrades');assert.equal(await panel(observer,'left').locator('[data-panel-tab="market-2"]').getAttribute('aria-pressed'),'true');assert.equal(await active.locator('.upgrade-level').count(),15);
+ await observer.locator('[data-follow]').click();await observer.waitForFunction(()=>document.querySelector('[data-panel="left"] [data-panel-tab="upgrades"]').getAttribute('aria-pressed')==='true');
+ await panel(active,'right').locator('[data-camera="in"]').click();await observer.waitForFunction(()=>document.querySelector('[data-panel="right"] .network-tools output').textContent==='120%');
+ await panel(active,'right').locator('[data-camera="in"]').click();await panel(active,'right').locator('[data-camera="in"]').click();await panel(active,'right').locator('.network-scroll').evaluate(n=>n.scrollLeft=60);await observer.waitForFunction(()=>document.querySelector('[data-panel="right"] .network-scroll').scrollLeft===60);
+ await tab(active,'left','government');await observer.waitForFunction(()=>document.querySelector('[data-panel="left"] [data-panel-tab="government"]').getAttribute('aria-pressed')==='true');await observer.locator('#partner-cursor').waitFor();await observer.locator('[data-follow]').click();assert.equal(await panel(observer,'left').locator('[data-panel-tab="market-2"]').getAttribute('aria-pressed'),'true');
+ await active.locator('[data-overview]').click();assert.equal(await active.locator('.table-map').isVisible(),true);await active.locator('.table-map [data-overview-area="deliveries"]').first().click();assert.equal(await active.locator('[data-loan]').isVisible(),true);
+ await active.screenshot({path:'/private/tmp/pipeline-desktop.png'});
+ assert.equal(await active.evaluate(()=>document.documentElement.scrollWidth),1440);assert.equal(await active.evaluate(()=>document.documentElement.scrollHeight),900);
+ await active.setViewportSize({width:390,height:844});assert.equal(await active.evaluate(()=>document.documentElement.scrollWidth),390);await active.screenshot({path:'/private/tmp/pipeline-mobile.png'});await active.setViewportSize({width:1440,height:900});
+ // Follow a live purchase draft, including pending tile positions, without granting action rights.
+ await active.locator('[data-command="end"]').click();await pages[0].waitForFunction(a=>room.state.turn.actor!==a,actor);const next=pages[1-actor],watch=pages[actor];await tab(next,'left','government');await panel(next,'left').locator('[data-government]:not([disabled])').first().click();await watch.locator('[data-follow]').click();await watch.waitForFunction(()=>document.querySelector('[data-command="confirm"]'));await panel(next,'right').locator('[data-cell="0,0"]').click();await watch.waitForFunction(()=>document.querySelector('.pending-pipe'));assert.equal(await watch.locator('[data-command="confirm"]').isDisabled(),true);await watch.locator('[data-follow]').click();
+ await next.locator('[data-command="cancel"]').click();
+ // Complete all 18 rounds using actual UI controls.
+ let turns=0;while(await pages[0].evaluate(()=>room.state.phase!=='finished')){if(turns++>40)throw Error('Too many turns');const a=await pages[0].evaluate(()=>room.state.turn.actor),p=pages[a];if(await p.evaluate(()=>room.state.turn.stage!=='machine')){await p.locator('[data-command="skip"]').click();await p.waitForFunction(()=>room.state.turn.stage==='machine');}const revision=await p.evaluate(()=>room.revision);await p.locator('[data-command="end"]').click();for(const q of pages)await q.waitForFunction(r=>room.revision>r,revision);}
+ assert.equal(await pages[0].locator('.score-board').isVisible(),true);assert.deepEqual(errors,[]);
+ const E=require('../game/engine');let raw=E.createGame({phase:'setup',ready:[true,true],tanks:[[2,1,1,1],[2,1,1,1]],firstRoll:{dice:[6,1],winner:0}},n=>n-1);
+ const tile=Object.values(E.faces).find(t=>t.halves.every(h=>h.some(p=>p.color==='teal')));raw.players[0].pipes=[{id:tile.id,x:0,y:0,rotation:0}];raw.costs.teal=[1,1,1];raw.players[0].oil=[{id:'fixture-oil',color:'teal',grade:0}];
+ const fixture={code:'REFINE-UI',local:true,revision:100,state:E.publicState(raw),players:[{name:'Alex',connected:true},{name:'Robin',connected:true}],log:[]};
+ const show=async f=>pages[0].evaluate(f=>{window.fixture=f;window.submitted=null;PipelineTable.render(f,{seat:0},async a=>{window.submitted=a;},console.error,false);},f);
+ await show(fixture);await panel(pages[0],'right').locator('[data-cell="0,0"]').click();await panel(pages[0],'right').locator('[data-oil="fixture-oil"]').click();await pages[0].locator('[data-refine-target$=",2"]:not([disabled])').first().click();assert.equal(await pages[0].locator('select[id^="refine-"]').count(),0);await pages[0].screenshot({path:'/private/tmp/pipeline-refine.png'});await pages[0].locator('[data-command="confirm"]').click();const action=await pages[0].evaluate(()=>window.submitted);assert.equal(E.applyAction(raw,0,action).players[0].oil[0].grade,2);
+ raw.players[0].oil[0].grade=3;const market=raw.markets.find(m=>m.id==='market-2'),row=market.rows.findIndex(r=>r.color==='teal'&&r.grade===1);market.rows[row].slots[1].barrel={id:'buy-oil',color:'teal',grade:1};fixture.code='SALE-UI';fixture.state=E.publicState(raw);await show(fixture);await tab(pages[0],'left','market-2');await panel(pages[0],'left').locator(`[data-market="market-2,${row},0"]`).click();await panel(pages[0],'right').locator('[data-oil="fixture-oil"]').click();await panel(pages[0],'left').locator(`[data-market="market-2,${row},1"]`).click();await pages[0].locator('[data-command="confirm"]').click();const sale=await pages[0].evaluate(()=>window.submitted);assert.equal(sale.transactions[0].barrel,'fixture-oil');assert.equal(sale.transactions[1].kind,'buy');assert.equal(E.applyAction(raw,0,sale).players[0].oil[0].id,'buy-oil');
+ await tab(pages[0],'left','deliveries');await pages[0].locator('[data-loan]').check();await pages[0].locator('[data-command="confirm"]').click();assert.equal((await pages[0].evaluate(()=>window.submitted)).loan,true);
+ assert.deepEqual(errors,[]);console.log('PASS: direct refinery oil selection, destinations, combined sell/buy, standalone loan');console.log('PASS: first-player selection, twin tabs, individual tile removal, independent views, following and click cursor, preview isolation, overview, loans, responsive layout, full 18-round game');
+ }finally{if(browser)await browser.close();await app.close();fs.rmSync(dir,{recursive:true,force:true});}
+})().catch(e=>{console.error(e);process.exitCode=1;});

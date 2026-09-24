@@ -1,8 +1,8 @@
 # Pipeline — a table for two
 
-A private, two-player implementation of Ryan Courtney’s **Pipeline**, using Node.js, Express and Socket.IO. The introductory base-game preset is playable locally: all three years, government and shop purchases, pipe placement, oil markets, worker and machine refining, contracts, orders, loans, five recommended upgrade families, annual benefits and final scoring.
+A private, two-player implementation of Ryan Courtney’s **Pipeline**, using Node.js, Express and Socket.IO. The two-player introductory base game, with the requested turn timer and valuation cards disabled, is playable locally: all three years, government and shop purchases, pipe placement, oil markets, worker and machine refining, contracts, orders, loans, five recommended upgrade families, annual benefits and final scoring.
 
-The board uses original SVG/CSS in the physical game’s charcoal, cream, olive, orange, teal and silver palette. All 135 pipe geometries and the contract/order faces were transcribed from the user’s physical copy. Reference photographs are private and excluded from deployment.
+The board uses a warm, old-fashioned tabletop treatment with cream, olive, dark yellow, teal, orange and silver playing surfaces. A dense pale-sage pattern of pipes, gauges, refinery silhouettes and flowing ornament sits quietly in the background without competing with game text. All 135 pipe geometries and the contract/order faces were transcribed from the user’s physical copy. Reference photographs are private and excluded from deployment.
 
 ## Play locally
 
@@ -13,21 +13,23 @@ pnpm install --frozen-lockfile
 pnpm start
 ```
 
-Open http://localhost:3001. Create a table and send its invite to the second player, or choose **Same device**. Each player arranges five tanks and clicks **Save & lock**. Once both are ready, click **Start the game**.
+Open http://localhost:3001. Create a table and send its invite to the second player, or choose **Same device**. Each player arranges five tanks and clicks **Save & lock**. Once both are ready, click **Start the game**. The server randomly chooses the first player. An animated highlight moves between the two players and reveals who starts before the board opens.
 
 Click a government tile to place the worker, then select its edge-sharing neighbors. The eight spaces in each quadrant follow the printed pinwheel arrangement. Selected pipes appear in the bottom action tray: select a pipe, rotate it, click a square in the large refinery beside the supplies, and confirm the purchase after placing every tile. Shop pipes work the same way. Purchases are validated and saved together; canceling an unconfirmed draft spends nothing.
 
-On desktop, the table fits the browser window with public supplies on the left, your refinery and inventory on the right, and the current action and confirmation at the bottom. Use the area tabs for government, markets, shops, contracts/orders, upgrades and action pairs. Each oil market has its own subtab. Switching views preserves an unconfirmed draft.
+The compact header shows the turn, year, invite/recovery controls, clocks, refinement costs and scoring. Both panels have identical tabs, so choose any two areas to inspect together. Action pairs comes first, followed by Government, separate markets, shops, contracts/orders, upgrades and the two distinctly colored refinery tabs. Whole table displays an illustrated schematic arranged like the physical board. Resize the panels with the separator; use + / −, Fit and 1:1 for each refinery.
 
-Use **Partner** or **Compare both** to inspect the other refinery. **Whole table** shows clickable supply summaries and both pipe networks; **Table info** opens refinement/scoring references, next-round order and recent activity. Drag the separator (or focus it and use the arrow keys) to resize the two areas; the browser remembers the width. Use the network’s **+ / −**, **Fit**, and **1:1** controls to inspect a growing refinery. Drag within the network to pan; a drag does not place a tile. Each player’s view and zoom stay independent during remote play. Smaller windows stack the areas and allow normal page scrolling.
+Follow partner mirrors their panel choices, zoom, scrolling and unconfirmed draft without allowing actions. A cursor moves between their clicked controls and briefly highlights each one. Stop following restores your view. Each turn has five minutes; each completed extra minute transfers $5 to the partner, allowing negative cash. Offline time counts. These are server-owned clocks that survive reconnects and restarts.
 
-Selected purchase totals include applicable secondary-action fees; selected market sales are shown separately. These are previews, and the server still validates funds, capacity, placement and action legality when confirming. Market slots are clickable: occupied slots buy oil and empty slots sell it. Refining starts by clicking a tile in the player’s network. Deliveries can be made between actions. End the machine phase with **End turn**.
+Tank rows run High to Crude. Click colored barrel boxes to select oil; dashed boxes show free capacity. For refining, select a worker tile, a barrel and an eligible destination in the refinery, then confirm the batch below. Draft pipe tiles have gold dashed outlines; click one again to remove just that tile. Loans are always visible inside Contracts & orders, and all upgrade levels can be read in advance.
+
+Selected purchase totals include applicable secondary-action fees; selected market sales are shown separately. These are previews, and the server still validates funds, capacity, placement and action legality when confirming. Market slots are clickable: occupied slots buy oil and empty slots sell it. Select both sales and purchases before confirming a market action; sales resolve first. Deliveries can be made between actions. End the machine phase with **End turn**.
 
 ## Included preset
 
 - Exactly two players, 8 / 6 / 4 rounds across three years.
 - Government, Engineering, Human Resources, Refined Markets and Shops upgrades, levels I–III.
-- Fixed valuations 1 / 2 / 3, plus the machine-pipeline valuation tile.
+- Valuation cards disabled at the user’s request; oil and pipelines score once. The separate machine-pipeline valuation tile remains. This differs from the published introductory scoring.
 - Refinement costs shuffled from three each of 4 / 5 / 6.
 - The physical two-player market masks, refresh amounts and shop counts.
 
@@ -57,9 +59,9 @@ The user’s photographs provide printed component data. The publisher’s corre
 pnpm test
 ```
 
-All 34 automated tests pass. Tests cover all 135 pipe rotations, crossings and machine cuts; atomic actions; prices and capacities; upgrade benefits; all 18 rounds; final scores; malformed actions; connected-seat authorization; stale versions; reconnects; local persistence; and authenticated recovery after a simulated lost server save.
+All 42 automated tests pass. Tests cover all 135 pipe rotations, crossings and machine cuts; atomic actions; prices and capacities; upgrade benefits; all 18 rounds; final scores; malformed actions; connected-seat authorization; stale versions; reconnects; local persistence; and authenticated recovery after a simulated lost server save.
 
-A two-tab browser playthrough completed all 18 rounds with government purchases, rotation/placement, a buy–refine–sell oil cycle, a paid secondary tank purchase, machine placement, an upgrade, a loan, contract penalties and annual benefits. A page refresh during a partly collected benefit retained the remaining entitlement. Final scores were $95–$95, with the winner correctly decided by turn order. This is an initial playtest, not a claim that every possible strategy or rare rules interaction has been exercised.
+The updated two-browser check completes all 18 rounds and verifies first-player selection, mirrored tabs and drafts, individual tile removal, oil selection, market trading, loans and responsive layout. This is targeted regression coverage, not a claim that every strategy or rare rules interaction has been exercised. See [the September update](docs/SEPTEMBER_UPDATE.md) for the controls, scoring variation, timer semantics and artwork prompt.
 
 ## Browser layout verification
 
@@ -70,7 +72,7 @@ The optional browser check uses a temporary server and temporary saves, and clos
 PLAYWRIGHT_MODULE=/path/to/playwright CHROME_PATH=/path/to/chrome node scripts/check-workspace.cjs
 ```
 
-It covers two independent seats, atomic pipe placement, rotation, preserved form selections, buying and selling oil, independent views and zoom, overview navigation, keyboard resizing, narrow-window overflow, all 18 rounds and final scores. A separate synthetic 60-tile rendering fixture checks wide-network fitting and panning without changing a saved game.
+It uses temporary saves and two independent browser contexts, then closes both the server and browser. Desktop and 390px mobile widths are checked, including synchronized views, preview isolation, direct oil controls and final scoring.
 
 ## Code
 

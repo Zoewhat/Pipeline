@@ -13,7 +13,7 @@ const list=(v,max=100)=>{assert(Array.isArray(v)&&v.length<=max,'Invalid selecti
 function shuffle(items,rng=randomInt){const a=[...items];for(let i=a.length-1;i>0;i--){const j=rng(i+1);[a[i],a[j]]=[a[j],a[i]];}return a;}
 const level=(p,f)=>p.upgrades[f]||0;
 function capacity(p){for(let g=0;g<4;g++)assert(p.oil.filter(b=>b.grade===g).length<=p.tanks[g]*2,'Not enough tank capacity for that grade.');}
-function pay(p,n){assert(Number.isSafeInteger(n)&&n>=0&&p.cash>=n,`You need $${n} for this action.`);p.cash-=n;}
+function pay(p,n){assert(Number.isSafeInteger(n)&&n>=0&&(n===0||p.cash>=n),`You need $${n} for this action.`);p.cash-=n;}
 function oil(s,color,grade){return {id:`oil-${s.serial++}`,color,grade};}
 function beginTurn(s){
   const actor=s.order[s.turnIndex],p=s.players[actor];
@@ -35,7 +35,7 @@ function createGame(setup,rng=randomInt){
   assert(setup.phase==='setup'&&setup.ready.every(Boolean),'Both players must lock their tank setup.');
   const markers=shuffle(C.refinementMarkers.filter(m=>m.value!==7).map(m=>m.value),rng);
   const action=shuffle(['upgrades','tanks-pipes','machines-pipes','contracts-loans'],rng);
-  const s={schema:2,phase:'playing',year:1,round:1,serial:1,order:shuffle([0,1],rng),nextOrder:[],turnIndex:0,
+  const s={schema:2,phase:'playing',year:1,round:1,serial:1,firstRoll:setup.firstRoll||null,order:setup.firstRoll?[setup.firstRoll.winner,1-setup.firstRoll.winner]:shuffle([0,1],rng),nextOrder:[],turnIndex:0,
     players:setup.tanks.map(tanks=>({cash:40,tanks:[...tanks],oil:[],pipes:[],machines:[],contracts:[],completedOrders:[],upgrades:{},penalties:0})),
     costs:Object.fromEntries(colors.map((c,i)=>[c,markers.slice(i*3,i*3+3)])),
     deck:shuffle(C.pipeTiles.map(p=>p.id),rng),government:[],shops:{tank:{},machine:{}},
@@ -174,7 +174,7 @@ function score(s){
     const machineValue=lines.filter(l=>l.machineAttached).reduce((v,l)=>v+R.pipelineAssetValue(s.costs[l.color],l.value),0);
     const tankValue=p.tanks.reduce((a,b)=>a+b,0)*10;
     const penalties=5*p.penalties*(p.penalties+3);
-    return {cash:p.cash,oil:oilValue,pipes:pipeValue,valuation1:oilValue,valuation2:pipeValue,valuation3:tankValue,machines:machineValue,penalties,total:p.cash+2*oilValue+2*pipeValue+tankValue+machineValue-penalties};
+    return {cash:p.cash,oil:oilValue,pipes:pipeValue,valuation1:0,valuation2:0,valuation3:0,machines:machineValue,penalties,total:p.cash+oilValue+pipeValue+machineValue-penalties};
   });s.winner=s.scores[0].total===s.scores[1].total?s.order[0]:s.scores[0].total>s.scores[1].total?0:1;s.phase='finished';
 }
 function nextTurn(s){

@@ -1,0 +1,379 @@
+/* Warm vintage board-game treatment selected from the design placement board. */
+:root {
+  --vintage-ink:#344039;
+  --vintage-muted:#687064;
+  --vintage-paper:#f2e8d1;
+  --vintage-paper-light:#fbf3e2;
+  --vintage-paper-deep:#dfcca3;
+  --vintage-olive:#52614b;
+  --vintage-olive-dark:#3e5145;
+  --vintage-teal:#397a7c;
+  --vintage-orange:#b86132;
+  --vintage-silver:#84908b;
+  --vintage-line:#a79a7d;
+  --vintage-shadow:#4b422f24;
+  --ink:var(--vintage-ink);
+  --muted:var(--vintage-muted);
+  --paper:var(--vintage-paper);
+  --white:var(--vintage-paper-light);
+  --line:var(--vintage-line);
+  --teal:var(--vintage-teal);
+  --orange:var(--vintage-orange);
+  --soft:#e4dcc5;
+  --board:var(--vintage-olive-dark);
+  --olive:var(--vintage-olive);
+}
+
+html,
+body,
+body:has(#table:not([hidden]) #game-board:not([hidden])),
+body:has(#lobby:not([hidden])) {
+  background-color:#e2d3b2;
+  color:var(--vintage-ink);
+}
+
+body::before,
+body:has(#lobby:not([hidden]))::before {
+  background-color:transparent;
+  background-image:url('/assets/pipeline-pattern-sage.webp');
+  background-repeat:repeat;
+  background-position:center top;
+  background-size:800px auto;
+  filter:none;
+  opacity:.76;
+}
+
+/* Typography: editorial headings, compact controls, no ornamental text behind content. */
+#table :is(h1,h2,h3,h4,.player-name,.tank-grade),
+#game-board :is(h2,h3,h4),
+.lobby-panel h2,
+.roll-card h1 {
+  font-family:Georgia,'Times New Roman',serif;
+  color:var(--vintage-ink);
+  font-weight:500;
+  letter-spacing:-.02em;
+}
+
+#table,
+#game-board,
+#game-board button,
+#game-board select,
+#game-board input {
+  color:var(--vintage-ink);
+}
+
+/* Lobby and setup retain one meaningful surface instead of stacked translucent cards. */
+.lobby .intro h1 {
+  color:#f8e4b9;
+  font-family:Georgia,'Times New Roman',serif;
+  font-weight:500;
+  letter-spacing:-.035em;
+  text-shadow:0 2px 2px #38463d,0 8px 28px #4a493c55;
+}
+.lobby .lobby-panel,
+#table .players .player,
+#table .table-bottom .activity,
+#table .setup-header,
+.roll-card {
+  background:var(--vintage-paper-light);
+  color:var(--vintage-ink);
+  border-color:var(--vintage-line);
+  box-shadow:0 8px 24px var(--vintage-shadow);
+  backdrop-filter:none;
+}
+.lobby .mode-switch .selected {border-color:var(--vintage-orange)}
+.primary {background:var(--vintage-olive-dark);border-color:var(--vintage-olive-dark)}
+.primary:hover:not(:disabled) {background:#2f4137;border-color:#2f4137}
+.secondary {border-color:var(--vintage-line);background:#f8f0de}
+.secondary:hover:not(:disabled) {background:#eadfc7}
+
+/* The game header is one information band. Only player identities remain separated. */
+#game-board .turn-banner {
+  color:var(--vintage-ink);
+  background:#eee2c8f2;
+  border:1px solid var(--vintage-line);
+  border-radius:5px;
+  box-shadow:0 3px 10px var(--vintage-shadow);
+}
+#game-board .turn-banner .eyebrow,
+#game-board .timer-rule {color:var(--vintage-muted)}
+#game-board .turn-banner h2 {color:var(--vintage-ink)}
+#game-board .player-pulse>span,
+#game-board .player-pulse .taking-turn {
+  color:var(--vintage-ink);
+  background:#f6ecd6;
+  border:1px solid #c2b494;
+  border-left:3px solid var(--vintage-teal);
+  border-radius:3px;
+  box-shadow:none;
+}
+#game-board .player-pulse .taking-turn {
+  background:#ead3a7;
+  border-color:var(--vintage-orange);
+}
+#game-board .player-pulse small {color:var(--vintage-muted)}
+#game-board .workspace-nav button,
+#game-board .invite button,
+#game-board .turn-buttons button {
+  color:var(--vintage-ink)!important;
+  background:#f8f0de!important;
+  border-color:#b6a889!important;
+  border-radius:3px;
+  box-shadow:none;
+}
+#game-board .turn-buttons .primary,
+#game-board .turn-buttons button.primary {
+  color:#fff8e8!important;
+  background:var(--vintage-olive-dark)!important;
+  border-color:#2e4036!important;
+}
+
+/* One flat reference strip; no card inside a card. */
+.table-reference-bar {
+  color:var(--vintage-ink);
+  background:#dfcda8ed;
+  border:0;
+  border-block:1px solid #a99570;
+  border-radius:0;
+  box-shadow:none;
+}
+#game-board .table-reference-bar .persistent-costs {
+  color:var(--vintage-ink);
+  background:none;
+}
+#game-board .persistent-costs strong {
+  color:var(--vintage-ink);
+  background:#f8efdb;
+  border-color:#b8a98b;
+  border-radius:2px;
+}
+.cost-color.orange b {color:#9e4e27}
+.cost-color.teal b {color:#2f6d6f}
+.cost-color.silver b {color:#626d68}
+
+/* Twin panels remain the only major workspace divisions. */
+.twin-stage {gap:0}
+.twin-panel {
+  color:var(--vintage-ink);
+  background:var(--vintage-olive);
+  border:1px solid #766b50;
+  border-radius:5px;
+  box-shadow:none;
+}
+.workspace-divider {
+  background:#9f8b6259;
+}
+.workspace-divider::after {border-color:#6f654c}
+.panel-tabs {
+  background:var(--vintage-olive-dark);
+  border-bottom:1px solid #807353;
+  gap:4px;
+}
+.panel-tabs button {
+  color:var(--vintage-ink);
+  background:#efe5cf;
+  border-color:#b7a985;
+  border-radius:3px;
+  box-shadow:none;
+}
+.panel-tabs button[aria-pressed=true] {
+  color:#fff8e8;
+  background:var(--vintage-orange);
+  border-color:#d59a70;
+}
+.panel-tabs button.refinery-tab {
+  color:var(--vintage-ink);
+  background:#bed2ca;
+  border-color:#76a2a1;
+}
+.panel-tabs button.refinery-tab[aria-pressed=true] {
+  color:white;
+  background:var(--vintage-teal);
+  border-color:#77a8a7;
+}
+
+/* Panel pages are single opaque sheets. Nested content panels do not draw extra boxes. */
+.panel-page,
+.panel-page>.board-panel,
+.panel-page .board-panel,
+.panel-page .refinery {
+  color:var(--vintage-ink);
+  background:var(--vintage-paper);
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+}
+.panel-page>.board-panel,
+.panel-page .board-panel {padding:12px}
+.panel-page .board-help,
+.panel-page .panel-title span,
+.panel-page .refresh-value,
+.panel-page .refinery-heading .eyebrow {color:var(--vintage-muted)}
+.panel-page .quadrant h4 {color:var(--vintage-ink)}
+
+/* Government is one board, divided only where the four quadrants require it. */
+.panel-page .government {background:var(--vintage-paper-light)}
+.panel-page .government .quadrant {background:transparent}
+.panel-page .government .quadrant:nth-child(odd) {border-right-color:#9b8b69}
+.panel-page .government .quadrant:nth-child(-n+2) {border-bottom-color:#9b8b69}
+.pipe-tile,
+.panel-page .pipe-tile {
+  background:#f6edda!important;
+  border-color:#b8aa8b;
+  border-width:1px;
+  box-shadow:none;
+}
+.pipe-hole {background:#b9ad91;opacity:.2}
+
+/* Controls and game objects keep boundaries because the boundaries carry meaning. */
+.panel-page .action-arm button {
+  color:#fff5df;
+  background:var(--vintage-olive);
+  border-color:#738066;
+}
+.government-action {
+  color:#fff8e8!important;
+  background:var(--vintage-orange)!important;
+  border-color:#8d4724!important;
+}
+.panel-page .market-slots button {
+  color:var(--vintage-ink);
+  background:#f8efdb;
+  border-color:#b8aa8b;
+}
+.panel-page .market-slots button:has(.empty-oil) {
+  background:#e6dbc3;
+  border-color:#9c8f73;
+}
+.priced-oil .oil-base {fill:#f8efdb;stroke-width:2}
+.panel-page .shop-slots button {
+  color:var(--vintage-ink);
+  background:#e2d3b6;
+  border-color:#a99670;
+  box-shadow:none;
+}
+.panel-page .shop-slots button small {
+  color:var(--vintage-ink);
+  background:#f7edda;
+}
+.shop-stock {background:var(--vintage-olive-dark)}
+.loan-option {
+  color:var(--vintage-ink);
+  background:#ead5a9;
+  border:0;
+  border-left:3px solid var(--vintage-orange);
+  border-radius:0;
+}
+.fulfillment-card,
+#game-board .fulfillment-card:disabled,
+#game-board button.upgrade-level,
+#game-board button.upgrade-level:disabled {
+  color:var(--vintage-ink);
+  background:#f8efdc;
+  border-color:#ad9e80;
+  box-shadow:none;
+}
+#game-board button.upgrade-level {border-left-color:var(--vintage-teal)}
+#game-board button.upgrade-level.chosen {background:#cfe0d5}
+#game-board button.upgrade-level:not(:disabled):hover {background:#e1e9d8;border-color:var(--vintage-teal)}
+.upgrade-family {border-color:#b6a98c}
+
+/* Refinery keeps one network boundary and one inventory division, not nested cards. */
+.panel-page .refinery {background:#d8c6a1}
+.panel-page .network-scroll {
+  background:var(--vintage-olive-dark);
+  border:1px solid #786c50;
+  border-radius:3px;
+}
+.network .grid-cell {
+  fill:#43564c;
+  fill-opacity:1;
+  stroke:#819080;
+  stroke-opacity:.55;
+}
+.network .empty-network {fill:#efe5cf}
+.network-tools {color:var(--vintage-ink)}
+.network-tools button {
+  color:var(--vintage-ink);
+  background:#f7edda;
+  border-color:#a99978;
+}
+.panel-page .tank-farm,
+.refine-controls {
+  color:var(--vintage-ink);
+  background:#eee3cc;
+  border:0;
+  border-left:1px solid #a99a7b;
+  border-radius:0;
+}
+.panel-page .farm-row {border-color:#baad91}
+.oil-box {background:#f7efdc!important;border-color:#9d9177!important}
+.empty-tank {background:#f4ead655;border-color:#8f836b}
+
+/* The action tray is one required transactional boundary. */
+#game-board .action-dock {
+  color:var(--vintage-ink);
+  background:#f1e6cff5;
+  border:1px solid #9e8d6d;
+  border-radius:5px;
+  box-shadow:0 4px 12px var(--vintage-shadow);
+  backdrop-filter:none;
+}
+.action-commit {border-color:#b7a98c}
+.action-body select {
+  color:var(--vintage-ink);
+  background:#fff8e7;
+  border-color:#b7a98c;
+}
+#game-board .action-dock .primary {
+  color:#fff8e8;
+  background:var(--vintage-teal);
+  border-color:#285e60;
+}
+
+/* Whole-table overview and information overlay keep only their necessary outer boundary. */
+.whole-table {
+  color:var(--vintage-ink);
+  background:#d8c6a1;
+  border-color:#8f7f60;
+}
+.whole-table details {
+  color:var(--vintage-ink);
+  background:transparent;
+  padding:6px 0 0;
+  border-radius:0;
+}
+.map-area {
+  color:var(--vintage-ink);
+  background:#f4ead5;
+  border-color:#a79674;
+  box-shadow:none;
+}
+.map-area:hover {background:#fbf3e2;border-color:var(--vintage-teal)}
+.workspace-information,
+.score-board {
+  color:var(--vintage-ink);
+  background:#f7edda;
+  border-color:#9f9072;
+  box-shadow:0 8px 24px var(--vintage-shadow);
+}
+
+/* Oil colors stay identical to the selected warm palette. */
+.oil-chip.orange {--oil-color:var(--vintage-orange)}
+.oil-chip.teal {--oil-color:var(--vintage-teal)}
+.oil-chip.silver {--oil-color:var(--vintage-silver)}
+
+@media(max-width:980px) {
+  body:has(#table:not([hidden]) #game-board:not([hidden])) main {padding:8px}
+  .twin-stage {gap:10px}
+  .panel-page .tank-farm,.refine-controls {border-left:0;border-top:1px solid #a99a7b}
+  #game-board .action-dock {box-shadow:0 -3px 12px var(--vintage-shadow)}
+}
+
+@media(max-width:520px) {
+  body::before,body:has(#lobby:not([hidden]))::before {background-size:620px auto;opacity:.62}
+  #game-board .turn-banner {box-shadow:none}
+  .table-reference-bar {padding-inline:5px}
+  .panel-tabs {gap:3px;padding:5px}
+  .panel-tabs button {padding:5px 6px}
+}

@@ -23,3 +23,11 @@ The $5 refinement-market modifier affects refined grades for both sales and purc
 The ten printed penalty totals follow `5 × n × (n + 3)`. The full engine continues that progression beyond ten penalties so an extreme repeated-loan game can finish; **this continuation is an explicit implementation assumption, not a separately verified printed rule**. The original arithmetic helper retains its strict ten-token range. All tested normal-game totals use the printed range.
 
 The introductory preset deliberately excludes the two optional upgrade families and other valuation cards. Their unverified/deferred catalog flags are not silently changed.
+
+## September 20 user-selected variations
+
+The active game ignores valuation cards 1/2/3 per the user’s explicit follow-up; oil and pipeline assets therefore count once, with no tank-card bonus. The separate machine-pipeline tile remains. The publisher actually requires the repeated asset bonuses when cards 1/2 are selected, so this is a variation, not a rule correction. A five-minute turn clock transfers $5 for each completed extra minute and permits negative cash. See SEPTEMBER_UPDATE.md for exact timing. Government benefits across older open quadrants and sell-before-buy transactions were reconfirmed and remain unchanged.
+
+## Contract reserve visibility (September 20 check)
+
+The publisher’s indexed corrected rulebook, page 4, setup step 4, explicitly places each remaining contract stack face up beside its row. The current top-of-stack preview therefore stays visible; deeper reserve order remains hidden. Page 6 supplies the next annual contract column from those stacks. Source: https://capstone-games.com/wp-content/uploads/2019/10/Pipeline-rules-v2-web.pdf
