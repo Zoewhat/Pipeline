@@ -93,39 +93,40 @@ $('copy').addEventListener('click', async () => {
 });
 
 function showOpeningRoll() {
-  const roll=room.state.firstRoll,stage=$('opening-roll');
+  const roll=room.state.firstRoll,stage=$('opening-roll'),result=$('setup-roll-result');
   const now=Date.now()+serverOffset;
   if(room.state.phase!=='playing'||!roll?.revealAt||now>=roll.revealAt+1200){
-    clearInterval(rollTimer);rollTimer=null;stage.hidden=true;return false;
+    clearInterval(rollTimer);rollTimer=null;stage.hidden=true;
+    $('players').querySelectorAll('.player').forEach(n=>n.classList.remove('roll-winner','starter-highlight'));
+    $('start-game').textContent='Start the game';result.hidden=true;return false;
   }
-  $('table').hidden=true;stage.hidden=false;
+  stage.hidden=true;
+  $('table').hidden=false;$('game-board').hidden=true;$('players').hidden=false;$('start-game').hidden=false;$('start-game').disabled=true;
+  $('players').querySelectorAll('button').forEach(button=>button.disabled=true);
+  result.hidden=false;
   const key=`${room.code}:${roll.revealAt}`;
   if(key!==rollKey){
     clearInterval(rollTimer);rollTimer=null;
     rollKey=key;
-    stage.querySelectorAll('[data-roll-name]').forEach(n=>n.textContent=room.players[Number(n.dataset.rollName)].name);
-    $('roll-result').textContent='Choosing the first player…';
-    stage.querySelectorAll('[data-starter-avatar]').forEach(n=>{
-      const words=room.players[Number(n.dataset.starterAvatar)].name.trim().split(/\s+/);
-      n.textContent=words.length>1?words.map(w=>Array.from(w)[0]).slice(0,2).join('').toUpperCase():Array.from(words[0]).slice(0,2).join('').toUpperCase();
-    });
-    stage.querySelectorAll('.roll-player').forEach(n=>n.classList.remove('roll-winner','starter-highlight'));
-    stage.focus({preventScroll:true});
+    result.textContent='Choosing the first player…';
+    $('start-game').textContent='Choosing who goes first…';
+    $('players').querySelectorAll('.player').forEach(n=>n.classList.remove('roll-winner','starter-highlight'));
   }
   if(!rollTimer){
-    const pips=[[],[4],[0,8],[0,4,8],[0,2,6,8],[0,2,4,6,8],[0,2,3,5,6,8]];
     const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
     const tick=()=>{
       if(!room||`${room.code}:${room.state.firstRoll?.revealAt}`!==key){clearInterval(rollTimer);rollTimer=null;stage.hidden=true;return;}
       const time=Date.now()+serverOffset,settled=time>=roll.revealAt;
       const progress=Math.max(0,Math.min(1,(time-roll.revealAt+3200)/3200));
       const highlighted=settled?roll.winner:(Math.floor(14*(1-(1-progress)**2))+roll.winner)%2;
-      stage.querySelectorAll('.roll-player').forEach((card,i)=>card.classList.toggle('starter-highlight',(!reduced||settled)&&i===highlighted));
+      const cards=$('players').querySelectorAll('.player');
+      cards.forEach((card,i)=>card.classList.toggle('starter-highlight',(!reduced||settled)&&i===highlighted));
       if(settled){
         const result=`${room.players[roll.winner].name} goes first`;
-        if($('roll-result').textContent!==result){
-          $('roll-result').textContent=result;
-          stage.querySelectorAll('.roll-player')[roll.winner].classList.add('roll-winner');
+        if($('setup-roll-result').textContent!==result){
+          $('setup-roll-result').textContent=result;
+          $('start-game').textContent=result;
+          cards[roll.winner].classList.add('roll-winner');
           sound('confirm');
         }
       }

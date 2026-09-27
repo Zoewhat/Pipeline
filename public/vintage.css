@@ -48,10 +48,10 @@ body:has(#lobby:not([hidden]))::before {
 #game-board :is(h2,h3,h4),
 .lobby-panel h2,
 .roll-card h1 {
-  font-family:Georgia,'Times New Roman',serif;
+  font-family:'Avenir Next','Helvetica Neue',Arial,sans-serif;
   color:var(--vintage-ink);
-  font-weight:500;
-  letter-spacing:-.02em;
+  font-weight:600;
+  letter-spacing:-.025em;
 }
 
 #table,
@@ -65,8 +65,8 @@ body:has(#lobby:not([hidden]))::before {
 /* Lobby and setup retain one meaningful surface instead of stacked translucent cards. */
 .lobby .intro h1 {
   color:#f8e4b9;
-  font-family:Georgia,'Times New Roman',serif;
-  font-weight:500;
+  font-family:'Avenir Next','Helvetica Neue',Arial,sans-serif;
+  font-weight:600;
   letter-spacing:-.035em;
   text-shadow:0 2px 2px #38463d,0 8px 28px #4a493c55;
 }
@@ -376,4 +376,490 @@ body:has(#lobby:not([hidden]))::before {
   .table-reference-bar {padding-inline:5px}
   .panel-tabs {gap:3px;padding:5px}
   .panel-tabs button {padding:5px 6px}
+}
+
+/* Larger, fuller game presentation. The ornament now lives on the visible
+   surfaces instead of a negative layer behind the retired sunset image. */
+html {
+  background-color:#e2d3b2;
+  background-image:url('/assets/pipeline-pattern-sage.webp');
+  background-repeat:repeat;
+  background-position:center top;
+  background-size:620px auto;
+  background-attachment:fixed;
+}
+body,
+body:has(#table:not([hidden]) #game-board:not([hidden])),
+body:has(#lobby:not([hidden])) {
+  background-color:transparent;
+  background-image:url('/assets/pipeline-pattern-sage.webp');
+  background-repeat:repeat;
+  background-position:center top;
+  background-size:620px auto;
+  background-attachment:fixed;
+}
+body::before,
+body:has(#lobby:not([hidden]))::before {display:none}
+
+#game-board {font-size:15px}
+#game-board .turn-banner h2 {font-size:15px;max-width:270px}
+#game-board .turn-banner .eyebrow,
+#game-board .player-pulse small,
+#game-board .player-pulse,
+#game-board .table-reference-bar .persistent-costs {font-size:12px}
+#game-board .player-pulse>span {padding:7px 9px}
+#game-board .turn-buttons button,
+#game-board .invite button,
+#game-board .table-reference-bar .workspace-nav button {font-size:12px;padding:6px 8px!important}
+
+.panel-tabs {padding:7px;gap:5px}
+.panel-tabs button,
+#game-board .panel-tabs button {font-size:13px;padding:7px 9px;line-height:1.2}
+.action-panel-tabs {
+  align-items:stretch;
+  align-content:flex-start;
+  row-gap:7px;
+}
+.action-panel-tabs>.government-tab {align-self:stretch}
+.action-pair-tabs {
+  display:inline-flex;
+  align-items:stretch;
+  gap:3px;
+  padding:3px;
+  border:1px solid #9a8b6a;
+  border-radius:5px;
+  background:#d9c79f;
+}
+.action-pair-tabs:has(button[aria-pressed=true]) {
+  border-color:var(--vintage-orange);
+  box-shadow:inset 0 0 0 1px #d59a70;
+}
+.action-pair-tabs .pair-link {
+  display:grid;
+  place-items:center;
+  color:#615d48;
+  font-size:13px;
+  line-height:1;
+}
+.action-pair-tabs button,
+#game-board .action-pair-tabs button {padding:6px 8px}
+.refinery-panel-tabs {flex-wrap:nowrap;align-items:stretch}
+.refinery-panel-tabs button {flex:1}
+
+/* One patterned sheet per tab. The extra cream veil keeps the ornament quiet
+   enough for labels while allowing it to be visible throughout the board. */
+.panel-page {
+  background-color:var(--vintage-paper);
+  background-image:linear-gradient(#f2e8d1d9,#f2e8d1d9),url('/assets/pipeline-pattern-sage.webp');
+  background-repeat:repeat,repeat;
+  background-position:center,center top;
+  background-size:auto,620px auto;
+}
+.panel-page>.board-panel,
+.panel-page .board-panel,
+.panel-page .shop-area,
+.panel-page .market-area {background:transparent}
+
+/* Every selected tab expands its real contents to the full panel height. */
+.panel-page>.board-panel,
+.panel-page>.shop-area {
+  width:100%;
+  min-height:100%;
+  height:100%;
+}
+.panel-page>.board-panel {display:flex;flex-direction:column;padding:18px}
+.public-workspace .board-panel h3,
+.panel-page .board-panel h3 {font-size:21px;line-height:1.15;margin:0 0 10px}
+.public-workspace .board-help,
+.panel-page .board-help,
+.public-workspace .panel-title span {font-size:14px;line-height:1.45}
+
+/* Actions */
+.panel-page .action-cross .cross-arms {
+  flex:1;
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:repeat(4,minmax(58px,1fr));
+  gap:12px;
+  margin:12px 0;
+}
+.panel-page .action-arm button {font-size:15px;min-height:0;padding:12px}
+.panel-page .action-arm button:disabled {
+  color:#f8efdc!important;
+  background:#65715f;
+  border-color:#7d8976;
+  opacity:1;
+}
+.panel-page .government-action {min-height:52px;font-size:15px}
+
+/* Markets */
+.panel-page .market {display:flex;flex-direction:column}
+.panel-page .market-row {flex:1;min-height:46px;margin:4px 0;gap:8px}
+.panel-page .market-row>span {width:50px;font-size:12px}
+.panel-page .market-row>span small,
+.panel-page .market-slots button small {font-size:12px}
+.panel-page .market-slots {gap:5px}
+.panel-page .market-slots button {min-height:42px;font-size:13px;padding:5px}
+.panel-page .market-slots .oil-chip {width:31px!important;height:31px!important}
+.panel-page .refresh-value {font-size:11px;max-width:38px}
+#game-board .crude-market .market-slots .crude-slot {flex-basis:58px;max-width:72px}
+.priced-oil text {font-size:13px}
+
+/* Shops */
+.panel-page>.shop-area {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:12px;
+}
+.panel-page .shop {display:flex;flex-direction:column;min-height:0;padding:18px}
+.panel-page .shop-slots {
+  flex:1;
+  min-height:170px;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:minmax(0,1fr);
+  gap:8px;
+  margin:6px 0 12px;
+}
+.panel-page .shop-slots button {height:100%;min-height:0;padding:7px}
+.panel-page .shop-slots .shop-illustration {
+  flex:1;
+  width:100%;
+  height:100%;
+  min-height:78px;
+  max-height:none;
+  object-fit:contain;
+}
+.panel-page .shop-slots button small {font-size:14px;padding:5px}
+.panel-page .shop-stock {font-size:11px}
+.panel-page .shop-pipes {
+  flex:0 1 38%;
+  min-height:100px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:minmax(0,1fr);
+  gap:9px;
+}
+.public-workspace .shop-pipes .pipe-tile svg,
+.panel-page .shop-pipes .pipe-tile svg {width:100%;height:100%;max-height:none}
+
+/* Contracts and orders */
+.panel-page .fulfillment {display:flex;flex-direction:column}
+.panel-page .fulfillment .loan-option {font-size:14px!important;padding:11px 13px;margin:4px 0 8px!important}
+.panel-page .fulfillment-columns {
+  flex:1;
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.panel-page .fulfillment-columns>div {display:flex;flex-direction:column;min-height:0}
+.panel-page .fulfillment h4 {font-size:15px;margin:5px 0 6px}
+.panel-page .card-row {flex:1;min-height:58px;margin:3px 0;gap:9px}
+.panel-page .card-row>span {width:44px;font-size:12px}
+.panel-page .fulfillment-card,
+.panel-page .empty-card {height:100%;min-height:52px}
+.panel-page .fulfillment-card {padding:7px 4px}
+.panel-page .card-oil {max-width:none}
+.panel-page .card-oil .oil-chip {width:33px!important;height:33px!important}
+.panel-page .reserve-preview {width:96px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.panel-page .reserve-label {display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;font-size:11px;line-height:1;white-space:nowrap}
+.panel-page .reserve-preview .fulfillment-card {flex:1}
+.panel-page .reserve-preview .oil-chip {width:25px!important;height:25px!important}
+
+/* Upgrades */
+.panel-page>.board-panel:has(>.upgrade-grid) {display:flex;flex-direction:column}
+#game-board .panel-page .upgrade-grid {
+  flex:1;
+  min-height:0;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-auto-rows:minmax(0,1fr);
+  gap:14px;
+}
+#game-board .panel-page .upgrade-family {display:flex;flex-direction:column}
+#game-board .panel-page .upgrade-family h4 {font-size:15px;margin:0 0 8px}
+#game-board .panel-page button.upgrade-level {
+  flex:1;
+  min-height:58px;
+  padding:11px;
+  font-size:14px;
+}
+#game-board .panel-page .upgrade-description {font-size:13px;line-height:1.45}
+
+/* Refinery type and controls match the larger board scale. */
+.refinery-pages .refinery-heading h2 {font-size:19px}
+.refinery-pages .refinery-heading .eyebrow,
+.refinery-pages .refinery-cash small,
+.network-tools,
+.refinery-pages .farm-row>span,
+.refinery-pages .tank-farm>p,
+.refinery-pages .owned-contracts,
+.refinery-pages .line-summary {font-size:12px}
+.refinery-pages .refinery-cash {font-size:26px}
+.refinery-pages .farm-row b,
+.refinery-pages .tank-farm h4 {font-size:13px}
+.network-tools button {font-size:12px;min-height:29px;padding:4px 8px}
+.action-body {font-size:14px}
+.action-body h3 {font-size:18px}
+.action-body p,.draft-quote {font-size:14px}
+
+@media(max-width:980px) {
+  #game-board {font-size:14px}
+  .panel-page>.shop-area {height:auto;min-height:100%;grid-template-columns:1fr}
+  .panel-page .shop {min-height:460px}
+  .panel-page .fulfillment-columns {grid-template-rows:none}
+}
+
+@media(max-width:520px) {
+  html,
+  body,
+  body:has(#table:not([hidden]) #game-board:not([hidden])),
+  body:has(#lobby:not([hidden])) {background-size:520px auto}
+  .panel-page {background-size:auto,520px auto}
+  .panel-tabs button,#game-board .panel-tabs button {font-size:12px;padding:6px 7px}
+  .action-pair-tabs {width:100%}
+  .action-pair-tabs button {flex:1}
+  .panel-page>.board-panel,.panel-page .shop {padding:13px}
+  .public-workspace .board-panel h3,.panel-page .board-panel h3 {font-size:19px}
+  .panel-page .shop-slots {min-height:150px}
+  .panel-page .card-oil .oil-chip {width:29px!important;height:29px!important}
+  .panel-page .reserve-preview {width:88px}
+  .panel-page .reserve-preview .oil-chip {width:22px!important;height:22px!important}
+}
+
+/* Compact top-right game menu. */
+#game-board .turn-banner {background:#eee2c8f2;border-color:#a79a7d}
+#game-board .player-pulse>span {background:#f6ecd6;border-color:#397a7c}
+#game-board .player-pulse .taking-turn {background:#ead3a7;border-color:#b86132}
+.table-reference-bar {background:#dfcda8ed;border-color:#a99570}
+.panel-tabs {background:#3e5145;border-color:#52614b}
+.panel-tabs button {background:#efe5cf;border-color:#b7a985}
+.panel-tabs button[aria-pressed=true] {background:#b86132;border-color:#8f3f1f}
+.panel-tabs button.refinery-tab {background:#bed2ca;border-color:#849b91}
+.panel-tabs button.refinery-tab[aria-pressed=true] {background:#397a7c;border-color:#285d5f}
+.panel-page .network-scroll {background:#3e5145;border-color:#52614b}
+.network .grid-cell {fill:#43564c;stroke:#819080;stroke-opacity:.5}
+.panel-page .tank-farm,.refine-controls {background:#eee3cc}
+.panel-page .shop-slots button {background:#e2d3b6;border-color:#a79a7d}
+
+#game-board .table-reference-bar .invite {position:relative;margin-left:auto}
+.game-menu {position:relative;z-index:30}
+.game-menu summary {
+  list-style:none;
+  cursor:pointer;
+  min-width:76px;
+  padding:6px 10px;
+  border:1px solid #52614b;
+  border-radius:3px;
+  background:#3e5145;
+  color:#fbf3e2;
+  text-align:center;
+  font-size:12px;
+  font-weight:600;
+}
+.game-menu summary::-webkit-details-marker {display:none}
+.game-menu summary::after {content:' ▾';color:#bed2ca}
+.game-menu[open] summary::after {content:' ▴'}
+.game-menu-popover {
+  position:absolute;
+  top:calc(100% + 6px);
+  right:0;
+  display:grid;
+  gap:4px;
+  min-width:190px;
+  padding:7px;
+  border:1px solid #52614b;
+  border-radius:4px;
+  background:#f2e8d1;
+  box-shadow:0 10px 28px #4b422f38;
+}
+#game-board .game-menu-popover button {
+  display:block;
+  width:100%;
+  margin:0;
+  padding:9px 10px!important;
+  border:1px solid #a79a7d!important;
+  background:#fbf3e2!important;
+  color:#344039!important;
+  text-align:left;
+  opacity:1;
+}
+#game-board .game-menu-popover button:hover {background:#dfcca3!important}
+
+/* Whole table is the third right-side view and fills the complete workspace. */
+.refinery-panel-tabs>button {flex:1}
+.twin-stage.overview-mode [data-panel="left"],
+.twin-stage.overview-mode .workspace-divider {display:none}
+.twin-stage.overview-mode [data-panel="right"] {grid-column:1/-1}
+.twin-stage.overview-mode .panel-page {overflow:hidden;max-height:none}
+.twin-stage.overview-mode .whole-table {
+  display:flex;
+  flex:1;
+  width:100%;
+  height:100%;
+  min-height:0;
+  padding:10px;
+  overflow:auto;
+}
+.twin-stage.overview-mode .table-map {
+  flex:1;
+  width:100%;
+  height:100%;
+  min-height:0;
+  grid-template-rows:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1.3fr) minmax(0,1fr);
+  align-content:stretch;
+}
+
+@media(max-width:980px) {
+  .twin-stage.overview-mode [data-panel="right"] {height:720px}
+  .twin-stage.overview-mode .table-map {min-height:680px;height:100%}
+}
+
+@media(max-width:700px) {
+  .twin-stage.overview-mode .table-map {
+    grid-template-rows:repeat(8,minmax(0,1fr));
+  }
+}
+
+/* Setup remains one page: activity sits beside Start, and the two name plates
+   become the visible first-player draw. */
+#table .setup-actions {
+  display:grid;
+  grid-template-columns:minmax(240px,.72fr) minmax(360px,1.28fr);
+  gap:24px;
+  align-items:stretch;
+  margin-top:24px;
+}
+#table .start-game-block {display:flex;flex-direction:column;gap:10px;min-width:0}
+#table .setup-actions #start-game {width:100%;min-height:58px;margin:0}
+#table #setup-roll-result {margin:0;padding:12px 14px;border-left:3px solid var(--vintage-orange);background:var(--vintage-paper-light);font-weight:700}
+#table .setup-actions .table-bottom {display:block;padding:0;min-width:0}
+#table .setup-actions .activity {height:100%;min-height:58px;padding:16px 20px}
+#table .player,
+#table .player .player-name {transition:background-color .16s ease,color .16s ease,border-color .16s ease,transform .16s ease,box-shadow .16s ease}
+#table .player .player-name {display:inline-block;padding:7px 10px;border-radius:3px}
+#table .player.starter-highlight {border-color:var(--vintage-orange);transform:translateY(-3px);box-shadow:0 10px 28px #4b422f35}
+#table .player.starter-highlight .player-name {color:#fff8e8;background:var(--vintage-orange)}
+#table .player.roll-winner {border-color:var(--vintage-teal);background:#e5d9b8}
+#table .player.roll-winner .player-name {color:#fff;background:var(--vintage-teal)}
+
+/* The first game row carries round/activity, costs and menu together. */
+#game-board .table-reference-bar {
+  display:grid;
+  grid-template-columns:minmax(230px,1.1fr) minmax(420px,2fr) auto auto;
+  gap:12px;
+  align-items:center;
+  padding:8px 10px;
+}
+#game-board .turn-summary {min-width:0}
+#game-board .turn-summary .eyebrow {display:block;margin:0 0 2px;font-size:10px;color:var(--vintage-muted)}
+#game-board .turn-summary h2 {margin:0;font-size:15px;line-height:1.2;color:var(--vintage-ink)}
+#game-board .turn-summary p {margin:2px 0 0;font-size:11px;line-height:1.25;color:var(--vintage-muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#game-board .table-reference-bar .persistent-costs {min-width:0}
+
+/* Refinery tabs are the player status line. Action controls live directly
+   below My refinery instead of in a separate header. */
+#game-board .refinery-panel-tabs {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:stretch;
+}
+#game-board .refinery-panel-tabs>button {min-width:0}
+.refinery-tab-label {display:flex;flex-direction:column;gap:3px;min-width:0;text-align:left}
+.refinery-tab-label b {font-size:13px}
+.refinery-tab-label small {font-size:10px;line-height:1.25;white-space:normal}
+#game-board .refinery-turn-actions {
+  grid-column:1;
+  display:flex;
+  width:100%;
+  margin:0;
+}
+#game-board .refinery-turn-actions button {width:100%;min-height:34px;padding:6px 8px!important;white-space:normal}
+.refinery-pages .refinery {padding-top:10px}
+.network-tools {justify-content:flex-end}
+
+/* Refined markets: two slots per color across four columns, three grade rows,
+   with the six crude spaces retained as their own bottom row. */
+.panel-page .refined-market {height:auto;min-height:100%}
+.refined-market-grid {
+  flex:1;
+  display:grid;
+  grid-template-columns:48px repeat(4,minmax(42px,1fr));
+  grid-template-rows:auto repeat(3,minmax(68px,1fr));
+  gap:7px;
+  align-items:stretch;
+  min-height:250px;
+}
+.refined-market-grid .market-color-heading {
+  grid-column:span 2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:5px;
+  border-bottom:2px solid var(--oil-color);
+  color:var(--vintage-ink);
+  font-size:12px;
+  text-transform:capitalize;
+}
+.refined-market-grid .market-color-heading.orange {--oil-color:var(--vintage-orange)}
+.refined-market-grid .market-color-heading.teal {--oil-color:var(--vintage-teal)}
+.refined-market-grid .market-color-heading.silver {--oil-color:var(--vintage-silver)}
+.refined-market-grid .market-grade-heading {display:flex;align-items:center;font-size:12px;font-weight:700}
+.refined-market-grid button {
+  display:grid;
+  place-items:center;
+  min-width:0;
+  min-height:62px;
+  padding:5px;
+  color:var(--vintage-ink);
+  background:#f8efdb;
+  border:1px solid #b8aa8b;
+}
+.refined-crude-row {display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:10px;border-top:1px solid #b8aa8b}
+.refined-crude-row>span {width:48px;flex:none;font-size:12px}
+.refined-crude-row>span small {display:block;text-align:center}
+.refined-crude-row .market-slots {display:grid;grid-template-columns:repeat(6,minmax(36px,1fr));flex:1}
+.priced-oil {width:42px!important;height:42px!important;margin:0!important;background:transparent!important;border:0!important;text-shadow:none!important}
+.priced-oil svg {width:100%;height:100%;overflow:visible}
+.priced-oil .oil-base {stroke:var(--oil-color);stroke-width:3;fill:#fffaf0}
+.priced-oil text {font:700 10px 'Avenir Next','Helvetica Neue',Arial,sans-serif;fill:var(--oil-color);stroke:none}
+.priced-oil.occupied-oil .oil-base {fill:var(--oil-color);stroke:var(--oil-color)}
+.priced-oil.occupied-oil text {fill:#fff}
+#game-board .refined-market-grid button:disabled,
+#game-board .market-slots button:disabled {opacity:1}
+
+/* Dense text areas scroll naturally rather than forcing their rows to overlap. */
+.panel-page>.board-panel:has(>.upgrade-grid),
+.panel-page>.fulfillment {height:auto;min-height:100%;flex:none;overflow:visible}
+#game-board .panel-page .upgrade-grid {flex:none;grid-auto-rows:auto;align-items:start}
+#game-board .panel-page .upgrade-family {min-width:0;height:auto}
+#game-board .panel-page button.upgrade-level {flex:none;height:auto;min-height:78px;overflow-wrap:anywhere}
+#game-board .panel-page .upgrade-description {display:block;overflow-wrap:anywhere}
+.panel-page .fulfillment-columns {flex:none;grid-template-rows:auto;overflow:visible}
+.panel-page .fulfillment-columns>div {overflow:visible}
+.panel-page .card-row {
+  flex:none;
+  display:grid;
+  grid-template-columns:44px repeat(2,minmax(82px,1fr)) minmax(92px,.85fr);
+  min-height:74px;
+  height:auto;
+  align-items:stretch;
+}
+.panel-page .card-row.order-row {grid-template-columns:repeat(2,minmax(100px,1fr))}
+.panel-page .fulfillment-card,
+.panel-page .empty-card {width:100%;height:auto;min-height:68px;overflow:hidden}
+.panel-page .reserve-preview {width:auto;min-width:0}
+
+@media(max-width:980px) {
+  #game-board .table-reference-bar {grid-template-columns:1fr auto;align-items:start}
+  #game-board .turn-summary,#game-board .persistent-costs {grid-column:1}
+  #game-board .workspace-nav,#game-board .invite {grid-column:2}
+}
+
+@media(max-width:700px) {
+  #table .setup-actions {grid-template-columns:minmax(135px,.75fr) minmax(0,1.25fr);gap:10px}
+  #table .setup-actions .activity {padding:13px}
+  #game-board .refinery-panel-tabs {grid-template-columns:1fr 1fr}
+  #game-board .refinery-panel-tabs>button[data-overview] {grid-column:1/-1}
+  #game-board .refinery-turn-actions {grid-column:1}
+  .refined-market-grid {grid-template-columns:40px repeat(4,minmax(36px,1fr));gap:4px}
 }

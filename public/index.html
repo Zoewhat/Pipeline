@@ -55,9 +55,14 @@
       </div>
       <div id="waiting" class="waiting" hidden>One seat is open. Send the invite link to your partner to bring them to the table.</div>
       <div id="players" class="players"></div>
-      <button id="start-game" class="primary" disabled>Start the game</button>
+      <div class="setup-actions">
+        <div class="start-game-block">
+          <button id="start-game" class="primary" disabled>Start the game</button>
+          <p id="setup-roll-result" role="status" aria-live="polite" hidden></p>
+        </div>
+        <div class="table-bottom"><details class="activity" open><summary>Table activity</summary><ol id="log"></ol></details></div>
+      </div>
       <div id="game-board" hidden></div>
-      <div class="table-bottom"><details class="activity" open><summary>Table activity</summary><ol id="log"></ol></details></div>
     </section>
   </main>
   <div id="notice" role="status" aria-live="polite" hidden></div>
