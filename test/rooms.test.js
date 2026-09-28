@@ -50,6 +50,7 @@ test('two-player rooms authorize seats, validate revisions, and survive reconnec
   assert.equal(partner.seat, 1);
   const shared = await waitState(a, state => state.players.length === 2);
   assert.equal(shared.gameplayAvailable, true);
+  assert.deepEqual(shared.state.scoring, {tankBonus:10,repeatOil:false,repeatPipelines:false,machinePipelines:false,levelThreeUpgrades:false});
   assert.equal(JSON.stringify(shared).includes('token'), false);
   assert.equal((await call(stranger, 'joinRoom', { code: owner.code, name: 'Third' })).ok, false);
   assert.equal((await call(stranger, 'resumeRoom', { code: owner.code, token: 'a'.repeat(64) })).ok, false);
@@ -61,6 +62,11 @@ test('two-player rooms authorize seats, validate revisions, and survive reconnec
   await waitState(b, state => state.revision > shared.revision);
   assert.deepEqual(a.latest.state.tanks[0], [1, 2, 1, 1]);
   assert.deepEqual(a.latest.state.tanks[1], [0, 0, 0, 0]);
+  assert.equal((await call(stranger, 'setScoring', { scoring: shared.state.scoring, revision: a.latest.revision })).ok, false);
+  assert.equal((await call(a, 'setScoring', { scoring: {tankBonus:7,repeatOil:false,repeatPipelines:false,machinePipelines:false,levelThreeUpgrades:false}, revision: a.latest.revision })).ok, false);
+  assert.equal((await call(a, 'setScoring', { scoring: {tankBonus:5,repeatOil:true,repeatPipelines:false,machinePipelines:true,levelThreeUpgrades:false}, revision: a.latest.revision })).ok, true);
+  await waitState(b, state => state.state.scoring.tankBonus === 5);
+  assert.deepEqual(a.latest.state.ready, [false, false]);
   assert.equal((await call(b, 'setReady', { tanks: [0, 0, 0, 5], ready: true, revision: b.latest.revision })).ok, true);
   await waitState(a, state => state.state.ready[1]);
   assert.equal((await call(b, 'setTanks', { tanks: [5, 0, 0, 0], revision: b.latest.revision })).ok, false);
@@ -148,6 +154,8 @@ test('first-player selection and view presence use the connected seat, while tim
  const startedRevision=a.latest.revision;assert.equal((await call(a,'startGame',{revision:startedRevision})).ok,false);assert.equal(a.latest.revision,startedRevision);assert.deepEqual(a.latest.state.firstRoll,roll);
  const revision=a.latest.revision,received=new Promise(r=>b.once('presence',r));assert.equal((await call(a,'presence',{left:'government',right:'refinery-0',overview:false,seat:1,token:'bad'})).ok,true);const data=await received;assert.equal(data.seat,0);assert.equal(data.token,undefined);assert.equal(a.latest.revision,revision);assert.equal((await call(stranger,'getPresence',{})).ok,false);
  assert.equal(roll.revealAt,4200);assert.equal(a.latest.state.clock.startedAt,5400);
+ now=6500;await call(b,'setClockPaused',{revision:b.latest.revision,paused:true});await waitState(a,s=>s.state.clock.pausedAt===6500);assert.equal(a.latest.change,'clock');
+ now=66500;await call(a,'setClockPaused',{revision:a.latest.revision,paused:false});await waitState(b,s=>!Number.isFinite(s.state.clock.pausedAt));assert.equal(a.latest.state.clock.startedAt,65400);
  const actor=roll.winner;now=a.latest.state.clock.startedAt+360000;await waitState(a,s=>s.state.players[actor].cash===35);assert.equal(a.latest.state.players[1-actor].cash,45);assert.equal(a.latest.change,'clock');const persisted=JSON.parse(readFileSync(path.join(dir,'rooms.json'))).rooms[0];assert.equal(persisted.revision,a.latest.revision);assert.equal(persisted.state.clock.chargedMinutes,1);
  const active=actor===0?a:b;await waitState(active,s=>s.revision===a.latest.revision);await call(active,'gameAction',{revision:active.latest.revision,action:{type:'skip'}});await call(active,'gameAction',{revision:active.latest.revision,action:{type:'end'}});assert.equal(active.latest.state.clock.startedAt,now);assert.equal(active.latest.state.clock.chargedMinutes,0);
 });

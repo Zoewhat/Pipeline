@@ -26,7 +26,7 @@ The introductory preset deliberately excludes the two optional upgrade families 
 
 ## September 20 user-selected variations
 
-The active game ignores valuation cards 1/2/3 per the user’s explicit follow-up; oil and pipeline assets therefore count once, with no tank-card bonus. The separate machine-pipeline tile remains. The publisher actually requires the repeated asset bonuses when cards 1/2 are selected, so this is a variation, not a rule correction. A five-minute turn clock transfers $5 for each completed extra minute and permits negative cash. See SEPTEMBER_UPDATE.md for exact timing. Government benefits across older open quadrants and sell-before-buy transactions were reconfirmed and remain unchanged.
+The September 27 setup supersedes the fixed September 20 scoring variation. Final valuation is now shared and configurable before play. New tables default to valuation card 3’s printed **$10 per owned tank**, while machine-attached pipeline scoring is off. The setup also offers the verified effects for repeated refined oil, repeated pipeline assets, $100 per level-three upgrade, and machine-attached pipelines; $5 per tank is explicitly labeled a house rule. Changing a rule unlocks both players’ setup so they approve the same configuration. Existing games saved without this configuration retain the previous machine-pipeline scoring behavior rather than changing mid-game. A five-minute turn clock transfers $5 for each completed extra minute and permits negative cash. See SEPTEMBER_UPDATE.md for exact timing. Government benefits across older open quadrants and sell-before-buy transactions were reconfirmed and remain unchanged.
 
 ## Contract reserve visibility (September 20 check)
 

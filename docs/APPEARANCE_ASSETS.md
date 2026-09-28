@@ -1,4 +1,8 @@
-# Harbor appearance update
+# Appearance assets and theme history
+
+The current interface uses one engraving-led visual system across the lobby, tank setup and live game. The shared background is `public/assets/pipeline-etching-login.webp`; live-game paper is translucent enough to retain a visible trace of the engraving, while refinery networks remain opaque for accurate placement. Nested presentation surfaces are flattened: inner boards and refinery sheets are transparent, informational chips lose decorative boxes, and borders are retained chiefly for controls, pieces and transactional boundaries. The printed orange, teal and silver materials use subdued burnt-clay, oxidized-slate and weathered-pewter pigments. The harbor and sage treatments described below remain as earlier design history and supporting assets, but the final `public/vintage.css` layer supersedes their visible page backgrounds.
+
+## Earlier harbor appearance update
 
 The background now uses a muted slate overlay, reduced saturation and contrast. All text areas have opaque or nearly opaque blue-gray surfaces. The public areas, refinery, tank farm, header, footer, setup and lobby use the same harbor palette. Dark network cells retain light labels.
 

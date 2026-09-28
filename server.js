@@ -6,9 +6,9 @@ const { Server } = require('socket.io');
 const { randomBytes, randomInt, createHash } = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const { createSetup, updateTanks } = require('./game/setup');
+const { createSetup, updateTanks, updateScoring } = require('./game/setup');
 const { createGame, applyAction, publicState } = require('./game/engine');
-const {startClock, settleClock} = require('./game/clock');
+const {startClock, settleClock, setClockPaused} = require('./game/clock');
 const {validatePresence} = require('./game/presence');
 const catalog = require('./data/components.json');
 const { recoveryStore } = require('./game/recovery');
@@ -196,6 +196,14 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
       finish(room, `${room.players[seat].name} ${data.ready ? 'locked' : 'unlocked'} their setup.`);
       done({});
     });
+    on('setScoring', (data, done) => {
+      const room = current(data);
+      const seat = room.local ? 0 : socket.data.seat;
+      if (![0, 1].includes(seat)) throw new Error('Join a player seat first.');
+      updateScoring(room.state, data.scoring);
+      finish(room, `${room.local ? 'The table' : room.players[seat].name} changed the final valuation rules. Both players must lock their setup again.`);
+      done({});
+    });
     on('rollFirst', () => { throw Error('The first player is chosen automatically when you start the game.'); });
     on('presence', (data, done) => {
       const room=rooms.get(socket.data.roomCode);
@@ -231,8 +239,23 @@ function createApp({ storageDir = process.env.DATA_DIR || path.join(__dirname, '
       const turnKey = `${room.state.year}:${room.state.round}:${room.state.turnIndex}`;
       room.state = applyAction(room.state, seat, data.action);
       if(room.state.phase==='playing' && turnKey!==`${room.state.year}:${room.state.round}:${room.state.turnIndex}`)startClock(room.state,now());
-      const label = {work:'completed a work action',fulfill:'delivered oil',bonus:'collected an upgrade benefit',machines:'ran their machines',skip:'passed an action',end:'ended their turn'}[data.action.type];
+      const label = {work:'completed a work action',fulfill:'delivered oil',bonus:'collected an upgrade benefit',machines:'ran their machines',skip:'passed an action',finish:'passed the remaining phases and ended their turn',end:'ended their turn'}[data.action.type];
       finish(room, `${room.players[seat].name} ${label}${data.action.space ? ` (${data.action.space})` : ''}.`);
+      done({});
+    });
+    on('setClockPaused', (data, done) => {
+      const room = current(data), changedAt = now();
+      const seat = room.local ? 0 : socket.data.seat;
+      if (![0, 1].includes(seat)) throw new Error('Join a player seat first.');
+      const charged = setClockPaused(room.state, changedAt, data.paused);
+      room.change = 'clock';
+      delete room.recoveryBootstrap;
+      room.revision++;
+      if (charged) room.log.push({ text: `${room.players[room.state.clock.actor].name} paid $${charged} in overtime.`, at: changedAt });
+      room.log.push({ text: `${room.local ? 'The table' : room.players[seat].name} ${data.paused ? 'paused' : 'resumed'} the turn clock.`, at: changedAt });
+      room.log = room.log.slice(-40);
+      commit(room);
+      broadcast(room);
       done({});
     });
     on('leaveRoom', (data, done) => {

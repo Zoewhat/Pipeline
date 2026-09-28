@@ -3,6 +3,7 @@ const {randomInt}=require('node:crypto');
 const C=require('../data/components.json');
 const G=require('../public/geometry');
 const R=require('./rules');
+const {normalizeScoring}=require('./setup');
 const faces=Object.fromEntries(C.pipeTiles.map(p=>[p.id,p]));
 const cards=Object.fromEntries([...C.contracts,...C.orders].map(c=>[c.id,c]));
 const families=['government','engineering','human-resources','refined-markets','shops'];
@@ -35,7 +36,7 @@ function createGame(setup,rng=randomInt){
   assert(setup.phase==='setup'&&setup.ready.every(Boolean),'Both players must lock their tank setup.');
   const markers=shuffle(C.refinementMarkers.filter(m=>m.value!==7).map(m=>m.value),rng);
   const action=shuffle(['upgrades','tanks-pipes','machines-pipes','contracts-loans'],rng);
-  const s={schema:2,phase:'playing',year:1,round:1,serial:1,firstRoll:setup.firstRoll||null,order:setup.firstRoll?[setup.firstRoll.winner,1-setup.firstRoll.winner]:shuffle([0,1],rng),nextOrder:[],turnIndex:0,
+  const s={schema:3,phase:'playing',year:1,round:1,serial:1,firstRoll:setup.firstRoll||null,order:setup.firstRoll?[setup.firstRoll.winner,1-setup.firstRoll.winner]:shuffle([0,1],rng),nextOrder:[],turnIndex:0,scoring:normalizeScoring(setup.scoring),
     players:setup.tanks.map(tanks=>({cash:40,tanks:[...tanks],oil:[],pipes:[],machines:[],contracts:[],completedOrders:[],upgrades:{},penalties:0})),
     costs:Object.fromEntries(colors.map((c,i)=>[c,markers.slice(i*3,i*3+3)])),
     deck:shuffle(C.pipeTiles.map(p=>p.id),rng),government:[],shops:{tank:{},machine:{}},
@@ -168,13 +169,18 @@ function finishWorkAction(s,p,a){
 }
 function cleanContracts(s,final=false){for(const p of s.players){p.contracts=p.contracts.filter(c=>{if(c.deferred){c.deferred=false;return true;}if(c.filled.length<cards[c.id].requirements.length){p.penalties++;return false;}c.filled=final?c.filled:[];return true;});}}
 function score(s){
+  // Games already in progress before configurable valuations retain their former
+  // machine-pipeline tile and do not acquire a new tank valuation mid-game.
+  const scoring=s.scoring||{tankBonus:0,repeatOil:false,repeatPipelines:false,machinePipelines:true,levelThreeUpgrades:false};
   s.scores=s.players.map(p=>{
     const oilValue=p.oil.reduce((v,b)=>v+R.barrelRevenue('oilAtEnd',b.grade),0);
     const lines=pipelines(s,p),pipeValue=lines.reduce((v,l)=>v+R.pipelineAssetValue(s.costs[l.color],l.value),0);
-    const machineValue=lines.filter(l=>l.machineAttached).reduce((v,l)=>v+R.pipelineAssetValue(s.costs[l.color],l.value),0);
-    const tankValue=p.tanks.reduce((a,b)=>a+b,0)*10;
+    const machineValue=scoring.machinePipelines?lines.filter(l=>l.machineAttached).reduce((v,l)=>v+R.pipelineAssetValue(s.costs[l.color],l.value),0):0;
+    const tankValue=p.tanks.reduce((a,b)=>a+b,0)*scoring.tankBonus;
+    const repeatedOil=scoring.repeatOil?oilValue:0,repeatedPipelines=scoring.repeatPipelines?pipeValue:0;
+    const levelThreeValue=scoring.levelThreeUpgrades?Object.values(p.upgrades).filter(n=>n===3).length*100:0;
     const penalties=5*p.penalties*(p.penalties+3);
-    return {cash:p.cash,oil:oilValue,pipes:pipeValue,valuation1:0,valuation2:0,valuation3:0,machines:machineValue,penalties,total:p.cash+oilValue+pipeValue+machineValue-penalties};
+    return {cash:p.cash,oil:oilValue,pipes:pipeValue,valuation1:repeatedOil,valuation2:repeatedPipelines,valuation3:tankValue,machines:machineValue,upgrades:levelThreeValue,penalties,total:p.cash+oilValue+pipeValue+repeatedOil+repeatedPipelines+tankValue+machineValue+levelThreeValue-penalties};
   });s.winner=s.scores[0].total===s.scores[1].total?s.order[0]:s.scores[0].total>s.scores[1].total?0:1;s.phase='finished';
 }
 function nextTurn(s){
@@ -219,6 +225,11 @@ function applyAction(state,actor,a){
   else if(a.type==='fulfill')fulfill(s,p,a);
   else if(a.type==='machines'){assert(s.turn.stage==='machine','Finish the work phase first.');refine(s,p,a,true);}
   else if(a.type==='end'){assert(s.turn.stage==='machine','Finish or skip the work action first.');nextTurn(s);}
+  else if(a.type==='finish'){
+    assert(['work','secondary'].includes(s.turn.stage),'Use End turn after the machine phase.');
+    assert(!p.machines.length,'Use the machine phase when you own a machine.');
+    nextTurn(s);
+  }
   else if(a.type==='skip'){
     if(s.turn.stage==='work'){s.turn.mainCount++;s.turn.stage=level(p,'human-resources')>=3&&s.turn.mainCount<2?'work':'machine';}
     else if(s.turn.stage==='secondary')s.turn.stage='machine';else throw new Error('Use End turn after the machine phase.');

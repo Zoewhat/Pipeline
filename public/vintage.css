@@ -1,17 +1,17 @@
-/* Warm vintage board-game treatment selected from the design placement board. */
+/* Navy-on-parchment engraving treatment shared by lobby, setup and game. */
 :root {
-  --vintage-ink:#344039;
-  --vintage-muted:#687064;
-  --vintage-paper:#f2e8d1;
-  --vintage-paper-light:#fbf3e2;
-  --vintage-paper-deep:#dfcca3;
-  --vintage-olive:#52614b;
-  --vintage-olive-dark:#3e5145;
-  --vintage-teal:#397a7c;
-  --vintage-orange:#b86132;
-  --vintage-silver:#84908b;
-  --vintage-line:#a79a7d;
-  --vintage-shadow:#4b422f24;
+  --vintage-ink:#17394d;
+  --vintage-muted:#53696f;
+  --vintage-paper:#eadfc8;
+  --vintage-paper-light:#f7ecd6;
+  --vintage-paper-deep:#d8c39d;
+  --vintage-olive:#607981;
+  --vintage-olive-dark:#17394d;
+  --vintage-teal:#48686c;
+  --vintage-orange:#8f5a43;
+  --vintage-silver:#777c76;
+  --vintage-line:#667d82;
+  --vintage-shadow:#17394d2b;
   --ink:var(--vintage-ink);
   --muted:var(--vintage-muted);
   --paper:var(--vintage-paper);
@@ -127,6 +127,14 @@ body:has(#lobby:not([hidden]))::before {
   background:var(--vintage-olive-dark)!important;
   border-color:#2e4036!important;
 }
+#game-board .turn-buttons button.end-turn {
+  color:#fff8e8!important;
+  background:#7b2925!important;
+  border-color:#531713!important;
+  box-shadow:0 0 0 2px #7b29252b,0 3px 0 #43120f!important;
+  font-weight:800;
+}
+#game-board .turn-buttons button.end-turn:hover:not(:disabled) {background:#912f29!important}
 
 /* One flat reference strip; no card inside a card. */
 .table-reference-bar {
@@ -147,9 +155,9 @@ body:has(#lobby:not([hidden]))::before {
   border-color:#b8a98b;
   border-radius:2px;
 }
-.cost-color.orange b {color:#9e4e27}
-.cost-color.teal b {color:#2f6d6f}
-.cost-color.silver b {color:#626d68}
+.cost-color.orange b {color:var(--vintage-orange)}
+.cost-color.teal b {color:var(--vintage-teal)}
+.cost-color.silver b {color:var(--vintage-silver)}
 
 /* Twin panels remain the only major workspace divisions. */
 .twin-stage {gap:0}
@@ -358,7 +366,7 @@ body:has(#lobby:not([hidden]))::before {
   box-shadow:0 8px 24px var(--vintage-shadow);
 }
 
-/* Oil colors stay identical to the selected warm palette. */
+/* Printed orange/teal/silver identities use quieter mineral pigments. */
 .oil-chip.orange {--oil-color:var(--vintage-orange)}
 .oil-chip.teal {--oil-color:var(--vintage-teal)}
 .oil-chip.silver {--oil-color:var(--vintage-silver)}
@@ -381,21 +389,18 @@ body:has(#lobby:not([hidden]))::before {
 /* Larger, fuller game presentation. The ornament now lives on the visible
    surfaces instead of a negative layer behind the retired sunset image. */
 html {
-  background-color:#e2d3b2;
-  background-image:url('/assets/pipeline-pattern-sage.webp');
-  background-repeat:repeat;
-  background-position:center top;
-  background-size:620px auto;
+  background-color:#d8c8a6;
+  background-image:none;
   background-attachment:fixed;
 }
 body,
 body:has(#table:not([hidden]) #game-board:not([hidden])),
 body:has(#lobby:not([hidden])) {
-  background-color:transparent;
-  background-image:url('/assets/pipeline-pattern-sage.webp');
-  background-repeat:repeat;
-  background-position:center top;
-  background-size:620px auto;
+  background-color:#d8c8a6;
+  background-image:linear-gradient(90deg,#eadfc8a8 0%,#eadfc852 50%,#eadfc885 100%),url('/assets/pipeline-etching-login.webp');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:cover;
   background-attachment:fixed;
 }
 body::before,
@@ -722,6 +727,37 @@ body:has(#lobby:not([hidden]))::before {display:none}
 
 /* Setup remains one page: activity sits beside Start, and the two name plates
    become the visible first-player draw. */
+#table .scoring-options {
+  margin-top:24px;
+  padding:20px;
+  color:var(--vintage-ink);
+  background:#e7dcc3e8;
+  border:1px solid #a99d82;
+  box-shadow:4px 4px 0 #71684f24;
+}
+#table .scoring-heading {display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:16px}
+#table .scoring-heading .eyebrow {margin:0 0 5px;color:var(--vintage-orange)}
+#table .scoring-heading h2 {margin:0;font-family:Georgia,'Times New Roman',serif;font-size:23px}
+#table .scoring-heading p {max-width:510px;margin:0;color:#5d594d;font-size:12px;line-height:1.5}
+#table .scoring-grid {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+#table .scoring-choice {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  min-height:92px;
+  margin:0;
+  padding:13px;
+  background:#f5ecd8;
+  border:1px solid #b9ab8e;
+  cursor:pointer;
+}
+#table .scoring-choice:has(input:checked) {border-color:var(--vintage-teal);box-shadow:inset 0 0 0 2px var(--vintage-teal)}
+#table .scoring-choice input {width:18px;height:18px;margin:2px 0 0;accent-color:var(--vintage-teal);flex:0 0 auto}
+#table .scoring-choice span {display:block;min-width:0}
+#table .scoring-choice b {display:block;font-size:13px}
+#table .scoring-choice small {display:block;margin-top:5px;color:#666052;font-size:11px;line-height:1.4;font-weight:400}
+#table .tank-scoring {display:block}
+#table .tank-scoring select {margin-top:9px;padding:8px;font-size:12px;background:#fff9ea}
 #table .setup-actions {
   display:grid;
   grid-template-columns:minmax(240px,.72fr) minmax(360px,1.28fr);
@@ -742,6 +778,15 @@ body:has(#lobby:not([hidden]))::before {display:none}
 #table .player.roll-winner {border-color:var(--vintage-teal);background:#e5d9b8}
 #table .player.roll-winner .player-name {color:#fff;background:var(--vintage-teal)}
 
+@media(max-width:980px) {
+  #table .scoring-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px) {
+  #table .scoring-heading {display:block}
+  #table .scoring-heading p {margin-top:10px}
+  #table .scoring-grid {grid-template-columns:1fr}
+}
+
 /* The first game row carries round/activity, costs and menu together. */
 #game-board .table-reference-bar {
   display:grid;
@@ -750,6 +795,51 @@ body:has(#lobby:not([hidden]))::before {display:none}
   align-items:center;
   padding:8px 10px;
 }
+
+/* September 27 engraving: the lobby establishes the shared navy and parchment palette. */
+body:has(#lobby:not([hidden])) {
+  background-color:#d8c8a6;
+  color:#19394b;
+}
+body:has(#lobby:not([hidden]))::before {
+  display:none;
+}
+body:has(#lobby:not([hidden])) .lobby .intro h1 {
+  color:#17394d;
+  font-family:Georgia,'Times New Roman',serif;
+  font-weight:600;
+  letter-spacing:-.045em;
+  text-shadow:0 1px 0 #f4ead4,0 6px 24px #efe1c9c9;
+}
+body:has(#lobby:not([hidden])) .lobby-panel {
+  color:#17394d;
+  background:#efe4cbdc;
+  border:1px solid #294c5e;
+  box-shadow:8px 8px 0 #17394d42,0 18px 45px #3f382b2e;
+  backdrop-filter:blur(3px);
+}
+body:has(#lobby:not([hidden])) .lobby-panel :is(label,summary) {color:#17394d}
+body:has(#lobby:not([hidden])) .lobby-panel :is(input,select) {background:#f8efdde8;color:#17394d;border-color:#667d82}
+body:has(#lobby:not([hidden])) .lobby-panel input::placeholder {color:#5f7275}
+body:has(#lobby:not([hidden])) .lobby-panel .mode-switch {border-color:#76898b}
+body:has(#lobby:not([hidden])) .lobby-panel .mode-switch button {color:#53696f}
+body:has(#lobby:not([hidden])) .lobby-panel .mode-switch .selected {color:#17394d;border-color:#17394d}
+body:has(#lobby:not([hidden])) .lobby-panel .primary {background:#17394d;border-color:#17394d;color:#f7ecd6}
+body:has(#lobby:not([hidden])) .lobby-panel .primary:hover:not(:disabled) {background:#244f63;border-color:#244f63}
+@media(max-width:700px) {
+  body:has(#lobby:not([hidden])) {background-position:82% center}
+}
+
+.panel-tabs button.refinery-tab {color:#173c43;background:#d5e5df;border-color:#76a2a1}
+.panel-tabs button.refinery-tab[aria-pressed=true] {color:#fffdf5;background:#26696b;border-color:#77a8a7}
+.panel-tabs button.refinery-tab .refinery-tab-label small {color:#36585b}
+.panel-tabs button.refinery-tab .refinery-tab-label strong,
+.panel-tabs button.refinery-tab .refinery-tab-label time {color:#173c43}
+.panel-tabs button.refinery-tab[aria-pressed=true] .refinery-tab-label small,
+.panel-tabs button.refinery-tab[aria-pressed=true] .refinery-tab-label strong,
+.panel-tabs button.refinery-tab[aria-pressed=true] .refinery-tab-label time {color:#fffdf5}
+.panel-tabs button.refinery-tab .refinery-tab-label time.overtime {color:#9d2e20}
+.panel-tabs button.refinery-tab[aria-pressed=true] .refinery-tab-label time.overtime {color:#ffd09b}
 #game-board .turn-summary {min-width:0}
 #game-board .turn-summary .eyebrow {display:block;margin:0 0 2px;font-size:10px;color:var(--vintage-muted)}
 #game-board .turn-summary h2 {margin:0;font-size:15px;line-height:1.2;color:var(--vintage-ink)}
@@ -862,4 +952,194 @@ body:has(#lobby:not([hidden]))::before {display:none}
   #game-board .refinery-panel-tabs>button[data-overview] {grid-column:1/-1}
   #game-board .refinery-turn-actions {grid-column:1}
   .refined-market-grid {grid-template-columns:40px repeat(4,minmax(36px,1fr));gap:4px}
+}
+
+/* Unified engraving palette: setup and play now continue the login screen's
+   navy ink, parchment paper and muted blue-gray panel language. */
+body:has(#table:not([hidden])) {
+  color:#17394d;
+  background-image:linear-gradient(90deg,#eadfc8bf 0%,#eadfc866 50%,#eadfc8a8 100%),url('/assets/pipeline-etching-login.webp');
+}
+body:has(#game-board:not([hidden])) {
+  background-image:linear-gradient(90deg,#eadfc88f 0%,#eadfc82e 50%,#eadfc86e 100%),url('/assets/pipeline-etching-login.webp');
+}
+#table :is(h2,h3,.player-name),
+#game-board :is(h2,h3) {
+  color:#17394d;
+  font-family:Georgia,'Times New Roman',serif;
+  font-weight:600;
+}
+
+/* Setup sheets */
+#table .setup-header,
+#table .players .player,
+#table .scoring-options,
+#table .setup-actions .activity {
+  color:#17394d;
+  background:#efe4cbe8;
+  border:1px solid #294c5e;
+  box-shadow:7px 7px 0 #17394d25,0 14px 34px #3f382b20;
+  backdrop-filter:blur(3px);
+}
+#table .setup-header {padding-inline:16px}
+#table .setup-header .round-strip {
+  color:#f7ecd6;
+  background:#17394d;
+  border:0;
+}
+#table .setup-header .round-strip small {color:#c8d6d5}
+#table .setup-header .invite {color:#17394d}
+#table .setup-header :is(.secondary,.text-button) {color:#17394d;border-color:#667d82;background:#f8efdde8}
+#table .players .player {border-top:5px solid #17394d}
+#table .players .player:nth-child(2) {border-top-color:#607981}
+#table .player-top {
+  color:#17394d;
+  background:#c9d5d6d9;
+  border-bottom:1px solid #667d82;
+}
+#table .player:nth-child(2) .player-top {background:#d8dedbd9}
+#table .cash,
+#table .cash small,
+#table .tank-grade,
+#table .tank-grade small {color:#17394d}
+#table .tank-row {border-color:#8ea0a0}
+#table .tank-controls button {color:#17394d;background:#f8efdde8;border-color:#667d82}
+#table .tank {
+  color:#17394d;
+  border-color:#607981;
+  background:linear-gradient(90deg,#91a9ad,#e7dfc9 42%,#789096);
+  box-shadow:inset 0 3px #dbe5e1,inset 0 -3px #607981;
+}
+#table .scoring-heading .eyebrow {color:var(--vintage-teal)}
+#table .scoring-heading p,
+#table .scoring-choice small {color:#53696f}
+#table .scoring-choice {
+  color:#17394d;
+  background:#f7ecd6df;
+  border-color:#71878a;
+}
+#table .scoring-choice:has(input:checked) {border-color:#17394d;box-shadow:inset 0 0 0 2px #17394d}
+#table .scoring-choice input {accent-color:#17394d}
+#table .tank-scoring select {color:#17394d;background:#f8efdde8;border-color:#667d82}
+#table .start-game-block .primary {background:#17394d;border-color:#17394d;color:#f7ecd6}
+#table .setup-actions .activity summary {color:#17394d}
+#table .setup-actions .activity li {border-color:#839496}
+
+/* Playing table frame and tabs */
+#game-board .turn-banner,
+#game-board .table-reference-bar,
+#game-board .workspace-information,
+#game-board .score-board {
+  color:#17394d;
+  background:#efe4cbca;
+  border-color:#667d82;
+  box-shadow:0 3px 12px #17394d1e;
+  backdrop-filter:blur(1px);
+}
+#game-board .turn-summary :is(.eyebrow,p),
+#game-board .turn-banner .eyebrow {color:#53696f}
+#game-board .persistent-costs strong,
+#game-board .government-price-summary span {
+  color:#17394d;
+  background:transparent;
+  border:0;
+  box-shadow:none;
+}
+.twin-panel {
+  color:#17394d;
+  background:#17394d1f;
+  border-color:#294c5e;
+  box-shadow:0 5px 18px #17394d24;
+}
+.workspace-divider {background:#17394d4d}
+.workspace-divider::after {border-color:#607981}
+.panel-tabs {background:#17394de8;border-color:#294c5e}
+.panel-tabs button,
+#game-board .panel-tabs button {
+  color:#17394d;
+  background:#efe4cb;
+  border-color:#71878a;
+}
+.panel-tabs button[aria-pressed=true] {color:#fff8e8;background:var(--vintage-orange);border-color:#644235}
+.panel-tabs button.refinery-tab {color:#17394d;background:#d5e1df;border-color:#789497}
+.panel-tabs button.refinery-tab[aria-pressed=true] {color:#fffdf5;background:var(--vintage-teal);border-color:#334f53}
+.action-pair-tabs {padding:0;background:transparent;border:0}
+.action-pair-tabs .pair-link {color:#36585f}
+
+/* Cream paper pages float over the shared engraving instead of introducing a
+   second sage pattern. */
+.panel-page {
+  color:#17394d;
+  background-color:#efe4cbbd;
+  background-image:none;
+}
+.panel-page>.board-panel,
+.panel-page .board-panel,
+.panel-page .refinery,
+.panel-page .government {
+  color:#17394d;
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+}
+.panel-page .board-help,
+.panel-page .panel-title span,
+.panel-page .refresh-value,
+.panel-page .refinery-heading .eyebrow {color:#53696f}
+.panel-page .action-arm button {color:#fff8e8;background:#607981;border-color:#405f68}
+.panel-page .action-arm button:disabled {color:#e7eeeb!important;background:#6d8388;border-color:#526e75}
+.government-action {color:#fff8e8!important;background:var(--vintage-orange)!important;border-color:#644235!important}
+.pipe-tile,.panel-page .pipe-tile {background:#f7ecd6!important;border-color:#71878a}
+.panel-page .market-slots button,
+.refined-market-grid button,
+.fulfillment-card,
+#game-board .fulfillment-card:disabled,
+#game-board button.upgrade-level,
+#game-board button.upgrade-level:disabled {
+  color:#17394d;
+  background:#f8efdd;
+  border-color:#71878a;
+}
+.panel-page .market-slots button:has(.empty-oil) {background:#dce4dedb;border-color:#71878a}
+.panel-page .shop-slots button {color:#17394d;background:#d5dfdc;border-color:#71878a}
+.panel-page .shop-slots button small {color:#17394d;background:transparent}
+.loan-option {color:#17394d;background:transparent;border-left-color:var(--vintage-orange)}
+.upgrade-family {background:transparent;border:0;border-bottom:1px solid #71878a80}
+#game-board button.upgrade-level {border-left-color:var(--vintage-teal)}
+#game-board button.upgrade-level.chosen {background:#c9dcda}
+
+/* Refineries and transactional surfaces */
+.panel-page .refinery {background:transparent}
+.panel-page .network-scroll {background:#17394d;border-color:#607981}
+.network .grid-cell {fill:#294b58;stroke:#789397;stroke-opacity:.58}
+.network .empty-network {fill:#f7ecd6}
+.network-tools {color:#17394d}
+.network-tools button {color:#17394d;background:#f7ecd6;border-color:#71878a}
+.panel-page .tank-farm,
+.refine-controls {color:#17394d;background:#efe4cb82;border-color:#71878a80}
+.panel-page .farm-row {border-color:#839496}
+.oil-box {background:#f8efdd!important;border-color:#71878a!important}
+.empty-tank {background:#f7ecd655;border-color:#71878a}
+#game-board .action-dock {
+  color:#17394d;
+  background:#efe4cbca;
+  border-color:#294c5e;
+  box-shadow:0 3px 12px #17394d24;
+  backdrop-filter:blur(1px);
+}
+.action-body select {color:#17394d;background:#f8efdd;border-color:#71878a}
+#game-board .action-dock .primary {color:#fff8e8;background:var(--vintage-teal);border-color:#334f53}
+.whole-table {color:#17394d;background:#d4c6a899;border-color:#607981}
+.map-area {color:#17394d;background:#f4ead5b8;border-color:#71878a}
+.map-area:hover {background:#f8efddcf;border-color:var(--vintage-teal)}
+.game-menu summary {color:#f7ecd6;background:#17394d;border-color:#294c5e}
+.game-menu-popover {background:#eadfc8;border-color:#294c5e;box-shadow:0 10px 28px #17394d38}
+#game-board .game-menu-popover button {color:#17394d!important;background:#f7ecd6!important;border-color:#71878a!important}
+
+@media(max-width:700px) {
+  body:has(#table:not([hidden])) {background-position:72% center}
+  #table .setup-header,
+  #table .players .player,
+  #table .scoring-options,
+  #table .setup-actions .activity {backdrop-filter:none}
 }

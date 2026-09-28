@@ -16,7 +16,9 @@ The server chooses either seat with equal probability when a player starts after
 
 The corrected publisher rulebook allows a Government benefit from any combination of open quadrants. The engine already allowed this; the interface now explains that earlier quadrants remain usable. Collect and place from one quadrant, then select another for the remaining benefit.
 
-The publisher’s introductory valuation cards 1 and 2 intentionally repeat oil and pipeline scoring, and card 3 gives a tank bonus. The user explicitly requested on September 20 to ignore valuation cards. The active game therefore counts cash + refined oil + pipelines + the separate machine-pipeline tile − penalties. All three card bonuses are disabled. This is a user-selected scoring variation, not a correction to the published introductory rules. The catalog and the historical `game/intro.js` reference arithmetic remain unchanged.
+The publisher’s introductory valuation cards 1 and 2 intentionally repeat oil and pipeline scoring, and card 3 is **$10 per owned tank**. The September 27 request supersedes the earlier fixed variation: the setup page now holds one shared final-valuation configuration. New tables default to $10 per tank and no machine-pipeline bonus. Players can instead turn the tank card off, choose a clearly labeled $5 house rule, or enable the verified repeated-oil, repeated-pipeline, machine-pipeline, and $100-per-level-three-upgrade effects. Any change clears both ready locks. Unsupported or unverified valuations are not presented as choices. Games already in progress before this change keep their previous scoring configuration.
+
+The dark-red end-turn control is visually distinct from ordinary actions. When a player owns no machines, the work and secondary-phase pass control explicitly passes the remaining phases and ends the turn in one server-validated action. It is not automatic, because a player may still want to deliver oil before ending.
 
 ## Turn clock (house rule)
 
@@ -38,6 +40,22 @@ Final generation prompt:
 
 ## Verification
 
-42 automated tests cover the base engine plus roll persistence, timer boundaries/debt, relay validation, seat isolation, persisted clock transfers, scoring and combined sale/purchase transactions. The optional browser script uses two independent seats and temporary saves, verifies the new controls and follows a full 18-round game. It additionally exercises direct oil selection for refining and selling, standalone loans, mobile width, read-only mirrored drafts and animated click indicators.
+47 automated tests cover the base engine plus roll persistence, timer boundaries/debt, pause/resume behavior, relay validation, seat isolation, persisted clock transfers, configurable scoring, streamlined turn ending and combined sale/purchase transactions. The optional browser script uses two independent seats and temporary saves, verifies the new controls and follows a full 18-round game. It additionally exercises direct oil selection for refining and selling, standalone loans, mobile width, read-only mirrored drafts and animated click indicators.
 
 The playing table now places fixed refinement/scoring information in the first header row and player balances, view controls, and the right-aligned work action in the second. Panel surfaces use a single translucent layer. Crude-market prices are inside colored oil rings; vacant positions retain dashed rings. Government quadrants use enlarged tiles and dividing lines, with quadrant names retained only as accessibility labels. The refinery scroll viewport has size containment and reserved scrollbar space, and skips redundant grid rebuilds so its own SVG resizing cannot repeatedly alter the observed layout.
+
+## September 27 interface adjustments
+
+`public/assets/pipeline-etching-login.webp`, an original navy-on-parchment pipeline engraving generated from the user's supplied style reference, now provides the shared backdrop for the login face, tank setup and playing table. Setup and play continue the same cream-paper, navy-ink and muted blue-gray panel language; teal, orange and silver remain functional game colors so oil and pipes stay distinct.
+
+Both authenticated seats can pause or resume the server-owned turn clock. Pausing first settles any completed overtime minute, then freezes elapsed time; resuming shifts the start timestamp by the paused duration. The pause state is persisted before broadcast and survives reconnects. A new turn always receives a fresh running five-minute clock.
+
+Cash and the clock remain in each refinery tab and are also shown in larger type inside both refinery panels. Government now shows the complete printed purchase summary above the quadrants: 1/$5, 2/$10, 3/$20, 4/$35 and 5/$55.
+
+The corrected rulebook requires the worker to select a whole Pipe tile when running the personal network, and every eligible pipeline passing through that tile can run. Clicking either half now selects and highlights the complete two-square tile, matching both the authoritative engine selection and the visible worker position.
+
+The September 27 login engraving was regenerated with a substantially larger lake and more open paper space. Repeated tree and pipeline motifs were replaced with varied rock strata, maintenance paths, shoreline equipment, pump structures, catwalks, different pipe diameters, and mechanically distinct routes while keeping the navy-on-cream engraving style.
+
+Final built-in image-generation direction:
+
+> Use case: precise-object-edit. Asset type: extra-wide login background. Preserve the authentic dark-navy copperplate engraving on fibrous cream paper, but make a large calm lake the dominant open area. Concentrate distinct refinery equipment, tanks, pump houses, gantries, catwalks, valve assemblies, ladders, shoreline pilings, varied rock strata and mechanically believable pipelines around the edges. Every route, support and terrain feature should differ; avoid repeated trees, cloned pipe modules, mirrored structures, fantasy machinery, text, logos and watermarks.

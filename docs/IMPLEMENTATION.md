@@ -1,6 +1,6 @@
 # September 20 update
 
-The active interface and scoring have changed: see [SEPTEMBER_UPDATE.md](SEPTEMBER_UPDATE.md). Both panels now have identical tabs, the board has generated sunset artwork, and dice, read-only partner following and server-owned turn clocks are implemented. Valuation cards are disabled per the user’s latest instruction; the separate machine tile remains. Older preset/layout descriptions below describe the earlier implementation.
+The active interface and scoring have changed: see [SEPTEMBER_UPDATE.md](SEPTEMBER_UPDATE.md). Both panels now have identical tabs, the board has generated sunset artwork, and first-player selection, read-only partner following and server-owned turn clocks are implemented. Setup now offers the verified valuation rules supported by the engine; the default is $10 per tank with machine pipelines off. Older preset/layout descriptions below describe the earlier implementation.
 
 # Implementation status
 
@@ -26,7 +26,7 @@ Free Render hosting is compatible with the generated stable BACKUP_SECRET and br
 
 ## Scope and rule notes
 
-The user requested the two-player introductory game. Its five upgrade families are Government, Engineering, Human Resources, Refined Markets and Shops; its valuations are 1/2/3 plus the machine-pipeline tile. Other valuations, Machines/Contracts upgrade families, player counts above two and expansions are outside this preset. Do not treat those deferred catalog entries as missing components for this game.
+The user requested the two-player introductory game. Its five upgrade families are Government, Engineering, Human Resources, Refined Markets and Shops. Setup exposes verified, implemented valuation effects: repeat oil, repeat all pipelines, per-tank value, level-three upgrades, and machine-attached pipelines. Other valuations, Machines/Contracts upgrade families, player counts above two and expansions are outside this preset. Do not treat those deferred catalog entries as missing components for this game.
 
 See RULE_DECISIONS.md for the publisher corrections applied to the user’s early-printing rules and the rare penalty-track extension assumption.
 

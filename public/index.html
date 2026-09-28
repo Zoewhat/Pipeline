@@ -55,6 +55,16 @@
       </div>
       <div id="waiting" class="waiting" hidden>One seat is open. Send the invite link to your partner to bring them to the table.</div>
       <div id="players" class="players"></div>
+      <section id="scoring-options" class="scoring-options" aria-labelledby="scoring-title">
+        <div class="scoring-heading"><div><span class="eyebrow">FINAL VALUATION</span><h2 id="scoring-title">Choose what scores again</h2></div><p>Shared table rules. Any change unlocks both players so each person can approve the final setup.</p></div>
+        <div class="scoring-grid">
+          <label class="scoring-choice tank-scoring"><span><b>Tanks</b><small>Printed valuation card 3 is $10 per owned tank.</small></span><select id="tank-bonus" data-scoring="tankBonus"><option value="10">$10 each · rulebook</option><option value="5">$5 each · house rule</option><option value="0">Do not score tanks</option></select></label>
+          <label class="scoring-choice"><input type="checkbox" data-scoring="repeatOil"><span><b>Refined oil again</b><small>Repeat the normal end-game value of oil in tanks.</small></span></label>
+          <label class="scoring-choice"><input type="checkbox" data-scoring="repeatPipelines"><span><b>All pipelines again</b><small>Repeat the normal asset value of every pipeline.</small></span></label>
+          <label class="scoring-choice"><input type="checkbox" data-scoring="machinePipelines"><span><b>Machine pipelines</b><small>Add the asset value of pipelines attached to machines.</small></span></label>
+          <label class="scoring-choice"><input type="checkbox" data-scoring="levelThreeUpgrades"><span><b>Level III upgrades</b><small>Add $100 for each level-three upgrade owned.</small></span></label>
+        </div>
+      </section>
       <div class="setup-actions">
         <div class="start-game-block">
           <button id="start-game" class="primary" disabled>Start the game</button>

@@ -156,13 +156,17 @@ function render() {
   $('waiting').hidden = room.players.length === 2;
   const setup = room.state.phase === 'setup';
   $('players').hidden = !setup;
+  $('scoring-options').hidden = !setup;
   $('start-game').hidden = !setup;
   $('start-game').disabled = busy || !socket.connected || room.players.length !== 2 || !room.state.ready?.every(Boolean);
   $('log').innerHTML = [...room.log].reverse().map(entry => `<li>${escapeHTML(entry.text)}</li>`).join('');
   PipelineTable.render(room, session, async action => {
     if (busy) throw new Error('Waiting for the previous action.');
     busy = true;
-    try { await request('gameAction', { revision: room.revision, seat: room.state.bonuses?.[0]?.actor ?? room.state.turn?.actor, action }); }
+    try {
+      if (action.type === 'clock') await request('setClockPaused', { revision: room.revision, paused: action.paused });
+      else await request('gameAction', { revision: room.revision, seat: room.state.bonuses?.[0]?.actor ?? room.state.turn?.actor, action });
+    }
     finally { busy = false; updateConnection(); render(); }
   }, notice, busy || !socket.connected);
   if (!setup) return;
@@ -180,6 +184,12 @@ function render() {
       <p class="tank-total ${total !== 5 ? 'invalid' : ''}">${total === 5 ? (ready ? 'Five tanks saved and locked.' : mine ? '5 of 5 tanks placed. Remove one to move it to another grade.' : '5 of 5 tanks placed.') : `${5 - total} tank${5 - total === 1 ? '' : 's'} left to place.`}</p>
       <div class="player-actions">${mine ? `<button class="primary" data-ready="${seat}" ${busy || !socket.connected || total !== 5 ? 'disabled' : ''}>${ready ? 'Unlock setup' : 'Save & lock'}</button>` : `<span class="helper">${ready ? 'Your partner has finished their setup.' : 'Your partner is arranging their tanks.'}</span>`}</div></article>`;
   }).join('');
+  const scoring = room.state.scoring || {tankBonus:10,repeatOil:false,repeatPipelines:false,machinePipelines:false,levelThreeUpgrades:false};
+  $('tank-bonus').value = String(scoring.tankBonus);
+  $('scoring-options').querySelectorAll('[data-scoring]').forEach(control => {
+    if (control.type === 'checkbox') control.checked = Boolean(scoring[control.dataset.scoring]);
+    control.disabled = busy || !socket.connected;
+  });
   $('log').innerHTML = [...room.log].reverse().map(entry => `<li><time>${escapeHTML(new Date(entry.at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))}</time>${escapeHTML(entry.text)}</li>`).join('');
 }
 $('start-game').addEventListener('click', () => run(async () => { await request('startGame', {revision:room.revision}); sound('confirm'); }));
@@ -205,6 +215,17 @@ $('players').addEventListener('click', event => {
       sound('confirm');
     }
   });
+});
+$('scoring-options').addEventListener('change', event => {
+  if (!event.target.matches('[data-scoring]') || !room || room.state.phase !== 'setup') return;
+  const scoring = {
+    tankBonus: Number($('tank-bonus').value),
+    repeatOil: $('scoring-options').querySelector('[data-scoring="repeatOil"]').checked,
+    repeatPipelines: $('scoring-options').querySelector('[data-scoring="repeatPipelines"]').checked,
+    machinePipelines: $('scoring-options').querySelector('[data-scoring="machinePipelines"]').checked,
+    levelThreeUpgrades: $('scoring-options').querySelector('[data-scoring="levelThreeUpgrades"]').checked
+  };
+  run(async () => { await request('setScoring', {scoring, revision:room.revision}); sound('click'); });
 });
 
 socket.on('state', data => {

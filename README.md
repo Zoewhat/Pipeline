@@ -1,8 +1,8 @@
 # Pipeline — a table for two
 
-A private, two-player implementation of Ryan Courtney’s **Pipeline**, using Node.js, Express and Socket.IO. The two-player introductory base game, with the requested turn timer and valuation cards disabled, is playable locally: all three years, government and shop purchases, pipe placement, oil markets, worker and machine refining, contracts, orders, loans, five recommended upgrade families, annual benefits and final scoring.
+A private, two-player implementation of Ryan Courtney’s **Pipeline**, using Node.js, Express and Socket.IO. The two-player introductory base game, with the requested turn timer and configurable verified valuations, is playable locally: all three years, government and shop purchases, pipe placement, oil markets, worker and machine refining, contracts, orders, loans, five recommended upgrade families, annual benefits and final scoring.
 
-The board uses a warm, old-fashioned tabletop treatment with cream, olive, dark yellow, teal, orange and silver playing surfaces. A dense pale-sage pattern of pipes, gauges, refinery silhouettes and flowing ornament sits quietly in the background without competing with game text. All 135 pipe geometries and the contract/order faces were transcribed from the user’s physical copy. Reference photographs are private and excluded from deployment.
+The complete experience—from the opening screen through tank setup and the playing table—uses one navy-on-parchment engraving treatment. Translucent cream paper panels, dark navy frames and muted blue-gray refinery surfaces let the detailed lakeside pipeline illustration remain visible during play. The printed orange, teal and silver materials use quieter burnt-clay, oxidized-slate and weathered-pewter pigments so they remain distinct without breaking the engraving palette. All 135 pipe geometries and the contract/order faces were transcribed from the user’s physical copy. Reference photographs are private and excluded from deployment.
 
 ## Play locally
 
@@ -13,27 +13,27 @@ pnpm install --frozen-lockfile
 pnpm start
 ```
 
-Open http://localhost:3001. Create a table and send its invite to the second player, or choose **Same device**. Each player arranges five tanks and clicks **Save & lock**. Once both are ready, click **Start the game**. The server randomly chooses the first player. An animated highlight moves between the two players and reveals who starts before the board opens.
+Open http://localhost:3001. Create a table and send its invite to the second player, or choose **Same device**. Each player arranges five tanks. The shared final-valuation panel defaults to the printed **$10 per tank** card, with machine pipelines off; either player may select the listed verified alternatives. Changing a valuation unlocks both setups so both players approve the same rules. Each player then clicks **Save & lock**. Once both are ready, click **Start the game**. The server randomly chooses the first player. An animated highlight moves between the two players and reveals who starts before the board opens.
 
 Click a government tile to place the worker, then select its edge-sharing neighbors. The eight spaces in each quadrant follow the printed pinwheel arrangement. Selected pipes appear in the bottom action tray: select a pipe, rotate it, click a square in the large refinery beside the supplies, and confirm the purchase after placing every tile. Shop pipes work the same way. Purchases are validated and saved together; canceling an unconfirmed draft spends nothing.
 
 The compact header shows the turn, year, invite/recovery controls, clocks, refinement costs and scoring. Both panels have identical tabs, so choose any two areas to inspect together. Action pairs comes first, followed by Government, separate markets, shops, contracts/orders, upgrades and the two distinctly colored refinery tabs. Whole table displays an illustrated schematic arranged like the physical board. Resize the panels with the separator; use + / −, Fit and 1:1 for each refinery.
 
-Follow partner mirrors their panel choices, zoom, scrolling and unconfirmed draft without allowing actions. A cursor moves between their clicked controls and briefly highlights each one. Stop following restores your view. Each turn has five minutes; each completed extra minute transfers $5 to the partner, allowing negative cash. Offline time counts. These are server-owned clocks that survive reconnects and restarts.
+Follow partner mirrors their panel choices, zoom, scrolling and unconfirmed draft without allowing actions. A cursor moves between their clicked controls and briefly highlights each one. Stop following restores your view. Each turn has five minutes; each completed extra minute transfers $5 to the partner, allowing negative cash. Either player can pause or resume the shared timer; while it is running, offline time counts. These are server-owned clocks that survive reconnects and restarts.
 
 Tank rows run High to Crude. Click colored barrel boxes to select oil; dashed boxes show free capacity. For refining, select a worker tile, a barrel and an eligible destination in the refinery, then confirm the batch below. Draft pipe tiles have gold dashed outlines; click one again to remove just that tile. Loans are always visible inside Contracts & orders, and all upgrade levels can be read in advance.
 
-Selected purchase totals include applicable secondary-action fees; selected market sales are shown separately. These are previews, and the server still validates funds, capacity, placement and action legality when confirming. Market slots are clickable: occupied slots buy oil and empty slots sell it. Select both sales and purchases before confirming a market action; sales resolve first. Deliveries can be made between actions. End the machine phase with **End turn**.
+Selected purchase totals include applicable secondary-action fees; selected market sales are shown separately. These are previews, and the server still validates funds, capacity, placement and action legality when confirming. Market slots are clickable: occupied slots buy oil and empty slots sell it. Select both sales and purchases before confirming a market action; sales resolve first. Deliveries can be made between actions. The dark-red **End turn** control ends the machine phase. A player who owns no machines can pass the remaining work or secondary phase and end the turn with one explicit button.
 
 ## Included preset
 
 - Exactly two players, 8 / 6 / 4 rounds across three years.
 - Government, Engineering, Human Resources, Refined Markets and Shops upgrades, levels I–III.
-- Valuation cards disabled at the user’s request; oil and pipelines score once. The separate machine-pipeline valuation tile remains. This differs from the published introductory scoring.
+- Final valuation is configured in setup. The default adds $10 per owned tank, as printed on valuation card 3, and does not add machine-attached pipelines. Verified optional rules can repeat refined oil, repeat all pipelines, add machine-attached pipeline value, or add $100 per level-three upgrade. A $5-per-tank house rule and “off” are also available.
 - Refinement costs shuffled from three each of 4 / 5 / 6.
 - The physical two-player market masks, refresh amounts and shop counts.
 
-Other valuation cards, the two non-introductory upgrade families, expansions and additional player counts are not selected by this preset.
+Valuation effects that are not verified or not yet supported, the two non-introductory upgrade families, expansions and additional player counts are not offered by this preset.
 
 ## Saves and recovery
 
@@ -59,7 +59,7 @@ The user’s photographs provide printed component data. The publisher’s corre
 pnpm test
 ```
 
-All 42 automated tests pass. Tests cover all 135 pipe rotations, crossings and machine cuts; atomic actions; prices and capacities; upgrade benefits; all 18 rounds; final scores; malformed actions; connected-seat authorization; stale versions; reconnects; local persistence; and authenticated recovery after a simulated lost server save.
+All 47 automated tests pass. Tests cover all 135 pipe rotations, crossings and machine cuts; atomic actions; prices and capacities; upgrade benefits; configurable valuations; streamlined turn ending; all 18 rounds; final scores; malformed actions; connected-seat authorization; stale versions; reconnects; local persistence; and authenticated recovery after a simulated lost server save.
 
 The updated two-browser check completes all 18 rounds and verifies first-player selection, mirrored tabs and drafts, individual tile removal, oil selection, market trading, loans and responsive layout. This is targeted regression coverage, not a claim that every strategy or rare rules interaction has been exercised. See [the September update](docs/SEPTEMBER_UPDATE.md) for the controls, scoring variation, timer semantics and artwork prompt.
 

@@ -79,14 +79,35 @@ test('refinement uses geometry, simultaneous capacity, Engineering throughput an
   s.players[0].upgrades.engineering=3;s=act(s,a);assert.ok(s.players[0].oil.every(b=>b.grade===2));
   const before=structuredClone(s);assert.throws(()=>act(s,{type:'machines',selections:[{pipelineId:l.id,barrelId:'a',toGrade:3}]}),/eligible/);assert.deepEqual(s,before);
 });
-test('all eighteen rounds complete, year refresh proceeds right-to-left, and scoring omits the disabled valuation cards',()=>{
+test('all eighteen rounds complete, year refresh proceeds right-to-left, and scoring applies the default tank valuation',()=>{
   let s=initial();s.players[0].oil=[{id:'end-oil',color:'orange',grade:2}];s.players[0].penalties=2;
   s.markets[0].rows[0].slots.forEach(slot=>slot.barrel=null);
   for(let turn=0;turn<16;turn++)s=finish(s);
   assert.equal(s.year,2);assert.equal(s.round,1);assert.deepEqual(s.markets[0].rows[0].slots.map(x=>!!x.barrel),[false,false,true,true,true,true]);
   for(let turn=0;turn<20;turn++)s=finish(s);
-  assert.equal(s.phase,'finished');assert.equal(s.scores[0].total,10);assert.equal(s.scores[1].total,40);assert.equal(s.winner,1);
+  assert.equal(s.phase,'finished');assert.equal(s.scores[0].total,60);assert.equal(s.scores[1].total,90);assert.equal(s.winner,1);
   assert.throws(()=>act(s,{type:'end'}),/not in progress/);
+});
+test('custom valuation rules score verified bonuses and can enable machine pipelines',()=>{
+  const s=initial(),tile=C.pipeTiles[0];
+  s.players[0].pipes=[{id:tile.id,x:0,y:0,rotation:0}];
+  s.players[0].machines=[{id:'machine-score',x:0,y:0}];
+  s.players[0].oil=[{id:'high',color:'orange',grade:3}];
+  s.players[0].upgrades.engineering=3;
+  s.costs={orange:[1,1,1],teal:[1,1,1],silver:[1,1,1]};
+  s.scoring={tankBonus:5,repeatOil:true,repeatPipelines:true,machinePipelines:true,levelThreeUpgrades:true};
+  E.score(s);
+  assert.equal(s.scores[0].valuation1,30);
+  assert.ok(s.scores[0].valuation2>0);
+  assert.equal(s.scores[0].valuation3,25);
+  assert.ok(s.scores[0].machines>0);
+  assert.equal(s.scores[0].upgrades,100);
+});
+test('a player without machines can explicitly pass remaining phases and end in one action',()=>{
+  let s=initial(),first=s.turn.actor;
+  s=act(s,{type:'finish'});assert.notEqual(s.turn.actor,first);
+  s=initial();first=s.turn.actor;s.turn.stage='secondary';s=act(s,{type:'finish'});assert.notEqual(s.turn.actor,first);
+  s=initial();first=s.turn.actor;s.players[first].machines=[{id:'machine',x:0,y:0}];assert.throws(()=>act(s,{type:'finish'}),/machine phase/);
 });
 test('malformed actions and failed bonus choices never mutate authoritative state',()=>{
   const s=initial(),before=structuredClone(s);
